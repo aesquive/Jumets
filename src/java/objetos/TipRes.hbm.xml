@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.TipRes" table="TIP_RES">
+    <id name="tipResId" type="big_decimal">
+      <column name="TIP_RES_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="calId" type="big_decimal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </property>
+    <property name="tipResDes" type="string">
+      <column length="100" name="TIP_RES_DES"/>
+    </property>
+    <property name="tipResLimInf" type="java.lang.Double">
+      <column name="TIP_RES_LIM_INF" precision="126" scale="0"/>
+    </property>
+    <property name="tipResLimSup" type="java.lang.Double">
+      <column name="TIP_RES_LIM_SUP" precision="126" scale="0"/>
+    </property>
+    <property name="tipResOrdPre" type="big_decimal">
+      <column name="TIP_RES_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="tipResPto" type="java.lang.Double">
+      <column name="TIP_RES_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="tipResWoe" type="java.lang.Double">
+      <column name="TIP_RES_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="tipResDesLar" type="string">
+      <column length="200" name="TIP_RES_DES_LAR"/>
+    </property>
+    <set inverse="true" name="cliMtas">
+      <key>
+        <column name="TIP_RES_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliMta"/>
+    </set>
+  </class>
+</hibernate-mapping>

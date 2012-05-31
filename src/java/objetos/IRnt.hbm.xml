@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.IRnt" table="I_RNT">
+    <id name="IRntId" type="big_decimal">
+      <column name="I_RNT_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="objetos.Cal" fetch="select" insert="false" name="cal" update="false">
+      <column name="I_RNT_ID" not-null="true" precision="22" scale="0" unique="true"/>
+    </many-to-one>
+    <property name="calId" type="big_decimal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </property>
+    <property name="IRntDes" type="string">
+      <column length="100" name="I_RNT_DES"/>
+    </property>
+    <property name="IRntLimInf" type="java.lang.Double">
+      <column name="I_RNT_LIM_INF" precision="126" scale="0"/>
+    </property>
+    <property name="IRntLimSup" type="java.lang.Double">
+      <column name="I_RNT_LIM_SUP" precision="126" scale="0"/>
+    </property>
+    <property name="IRntOrdPre" type="big_decimal">
+      <column name="I_RNT_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="IRntPto" type="java.lang.Double">
+      <column name="I_RNT_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="IRntWoe" type="java.lang.Double">
+      <column name="I_RNT_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="IRntDesLar" type="string">
+      <column length="200" name="I_RNT_DES_LAR"/>
+    </property>
+  </class>
+</hibernate-mapping>

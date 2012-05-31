@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.RelPsiSoc" table="REL_PSI_SOC">
+    <id name="relPsiSocId" type="big_decimal">
+      <column name="REL_PSI_SOC_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="objetos.CatPsi" fetch="select" name="catPsi">
+      <column name="CAT_PSI_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="calId" type="big_decimal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </property>
+    <property name="relPsiSocDes" type="string">
+      <column length="100" name="REL_PSI_SOC_DES"/>
+    </property>
+    <property name="relPsiSocNumRes" type="big_decimal">
+      <column name="REL_PSI_SOC_NUM_RES" precision="22" scale="0"/>
+    </property>
+    <property name="relPsiSocPto" type="java.lang.Double">
+      <column name="REL_PSI_SOC_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="relPsiSocWoe" type="java.lang.Double">
+      <column name="REL_PSI_SOC_WOE" precision="126" scale="0"/>
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.OpnMap" table="OPN_MAP">
+    <id name="opnMapId" type="big_decimal">
+      <column name="OPN_MAP_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="objetos.Cal" fetch="select" name="cal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="opnMapDes" type="string">
+      <column length="100" name="OPN_MAP_DES"/>
+    </property>
+    <property name="opnMapLimInf" type="java.lang.Double">
+      <column name="OPN_MAP_LIM_INF" precision="126" scale="0"/>
+    </property>
+    <property name="opnMapLimSup" type="java.lang.Double">
+      <column name="OPN_MAP_LIM_SUP" precision="126" scale="0"/>
+    </property>
+    <property name="opnMapOrdPre" type="big_decimal">
+      <column name="OPN_MAP_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="opnMapPto" type="java.lang.Double">
+      <column name="OPN_MAP_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="opnMapWoe" type="java.lang.Double">
+      <column name="OPN_MAP_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="opnMapDesLar" type="string">
+      <column length="200" name="OPN_MAP_DES_LAR"/>
+    </property>
+  </class>
+</hibernate-mapping>

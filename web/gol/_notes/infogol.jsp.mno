@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="MMGuideColor" value="#00FF00" />
+	<infoitem key="MMGuideVisible" value="true" />
+	<infoitem key="MMGuideLocked" value="false" />
+	<infoitem key="MMSnapToGuide" value="true" />
+	<infoitem key="MMGuidesSnapToElements" value="true" />
+	<infoitem key="MMDistanceColor" value="#0000FF" />
+	<infoitem key="MMGuideCount" value="15" />
+	<infoitem key="MMGuide0" value="vertical: user 834 px" />
+	<infoitem key="MMGuide1" value="vertical: user 819 px" />
+	<infoitem key="MMGuide2" value="vertical: user 778 px" />
+	<infoitem key="MMGuide3" value="vertical: user 744 px" />
+	<infoitem key="MMGuide4" value="vertical: user 728 px" />
+	<infoitem key="MMGuide5" value="vertical: user 694 px" />
+	<infoitem key="MMGuide6" value="vertical: user 683 px" />
+	<infoitem key="MMGuide7" value="vertical: user 649 px" />
+	<infoitem key="MMGuide8" value="vertical: user 639 px" />
+	<infoitem key="MMGuide9" value="vertical: user 598 px" />
+	<infoitem key="MMGuide10" value="vertical: user 588 px" />
+	<infoitem key="MMGuide11" value="vertical: user 541 px" />
+	<infoitem key="MMGuide12" value="vertical: user 532 px" />
+	<infoitem key="MMGuide13" value="vertical: user 486 px" />
+	<infoitem key="MMGuide14" value="vertical: user 478 px" />
+</info>

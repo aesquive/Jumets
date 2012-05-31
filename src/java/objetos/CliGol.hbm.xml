@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.CliGol" table="CLI_GOL">
+    <id name="cliGolId" type="big_decimal">
+      <column name="CLI_GOL_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="objetos.ApoPad" fetch="select" name="apoPad">
+      <column name="APO_PAD_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.Srv" fetch="select" name="srv">
+      <column name="SRV_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.SolCre" fetch="select" name="solCre">
+      <column name="SOL_CRE_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.IPsi" fetch="select" name="IPsi">
+      <column name="IP_PSI_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.ProAnoGto" fetch="select" name="proAnoGto">
+      <column name="PRO_ANO_GTO_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.GtoAlm" fetch="select" name="gtoAlmByGtoAlmId">
+      <column name="GTO_ALM_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.GtoDeu" fetch="select" name="gtoDeuByGtoDeuId">
+      <column name="GTO_DEU_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.ApoCon" fetch="select" name="apoCon">
+      <column name="APO_CON_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.GtoLim" fetch="select" name="gtoLim">
+      <column name="GTO_LIM_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.Mov" fetch="select" name="mov">
+      <column name="MOV_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.Pbm" fetch="select" name="pbm">
+      <column name="PBM_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.Rel" fetch="select" name="rel">
+      <column name="REL_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.Rol" fetch="select" name="rol">
+      <column name="ROL_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.ApoOtr" fetch="select" name="apoOtr">
+      <column name="APO_OTR_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.TipCre" fetch="select" name="tipCre">
+      <column name="TIP_CRE_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.Ptm" fetch="select" name="ptm">
+      <column name="PTM_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.ApoHij" fetch="select" name="apoHij">
+      <column name="APO_HIJ_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.Est" fetch="select" name="est">
+      <column name="EST_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.ActUlt" fetch="select" name="actUlt">
+      <column name="ACT_ULT_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.VlrViv" fetch="select" name="vlrViv">
+      <column name="VLR_VIV_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.GtoDiv" fetch="select" name="gtoDiv">
+      <column name="GTO_DIV_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.CueAbr" fetch="select" name="cueAbr">
+      <column name="CUE_ABR_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.NivEstPap" fetch="select" name="nivEstPap">
+      <column name="NIV_EST_PAP_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.GtoEdu" fetch="select" name="gtoEdu">
+      <column name="GTO_EDU_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.FreRel" fetch="select" name="freRel">
+      <column name="FRE_REL_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.Sex" fetch="select" name="sex">
+      <column name="SEX_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.NivEst" fetch="select" name="nivEst">
+      <column name="NIV_EST_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.NivEstMam" fetch="select" name="nivEstMam">
+      <column name="NIV_EST_MAM_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.DinExt" fetch="select" name="dinExt">
+      <column name="DIN_EXT_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.GtoTrn" fetch="select" name="gtoTrn">
+      <column name="GTO_TRN_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.SitPrxAn" fetch="select" name="sitPrxAn">
+      <column name="SIT_PRX_AN_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.GtoAlm" fetch="select" name="gtoAlmByGtoAlmHId">
+      <column name="GTO_ALM_H_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.GtoDeu" fetch="select" name="gtoDeuByGtoDeuHId">
+      <column name="GTO_DEU_H_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.VcsViv" fetch="select" name="vcsViv">
+      <column name="VCS_VIV_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.FreDin" fetch="select" name="freDin">
+      <column name="FRE_DIN_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.PagRnt" fetch="select" name="pagRnt">
+      <column name="PAG_RNT_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.SrvInd" fetch="select" name="srvInd">
+      <column name="SERV_IND_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.SitAct" fetch="select" name="sitAct">
+      <column name="SIT_ACT_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.GtoOtr" fetch="select" name="gtoOtrByGtoOtrHId">
+      <column name="GTO_OTR_H_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.NumCre" fetch="select" name="numCre">
+      <column name="NUM_CRE_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.GtoOtr" fetch="select" name="gtoOtrByGtoOtrId">
+      <column name="GTO_OTR_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.GtoSld" fetch="select" name="gtoSld">
+      <column name="GTO_SLD_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.Ocp" fetch="select" name="ocp">
+      <column name="OCP_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.CliMta" fetch="select" name="cliMta">
+      <column name="CLI_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.TipEmp" fetch="select" name="tipEmp">
+      <column name="TIP_EMP_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.GtoVes" fetch="select" name="gtoVes">
+      <column name="GTO_VES_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.VivAct" fetch="select" name="vivAct">
+      <column name="VIV_ACT_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.BurUso" fetch="select" name="burUso">
+      <column name="BUR_USO" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.RelFam" fetch="select" name="relFam">
+      <column name="REL_FAM_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.GtoSerViv" fetch="select" name="gtoSerViv">
+      <column name="GTO_SRV_VIV_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.GtoRen" fetch="select" name="gtoRen">
+      <column name="GTO_REN_H_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.GtoPer" fetch="select" name="gtoPer">
+      <column name="GTO_PER_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="cliGolSitPor" type="string">
+      <column length="100" name="CLI_GOL_SIT_POR"/>
+    </property>
+    <property name="cliGolDeuPre" type="string">
+      <column length="100" name="CLI_GOL_DEU_PRE"/>
+    </property>
+    <property name="apyEcoId" type="big_decimal">
+      <column name="APY_ECO_ID" precision="22" scale="0"/>
+    </property>
+    <property name="cliGolRelFamOtr" type="string">
+      <column length="100" name="CLI_GOL_REL_FAM_OTR"/>
+    </property>
+    <property name="cliGolRelOtr" type="string">
+      <column length="100" name="CLI_GOL_REL_OTR"/>
+    </property>
+    <property name="cliGolRelDec" type="string">
+      <column length="100" name="CLI_GOL_REL_DEC"/>
+    </property>
+    <property name="cliGolMotCas" type="string">
+      <column length="100" name="CLI_GOL_MOT_CAS"/>
+    </property>
+    <property name="cliGolMotCam" type="string">
+      <column length="100" name="CLI_GOL_MOT_CAM"/>
+    </property>
+    <property name="cliGolResAct" type="big_decimal">
+      <column name="CLI_GOL_RES_ACT" precision="22" scale="0"/>
+    </property>
+    <property name="cliGolActPor" type="string">
+      <column length="100" name="CLI_GOL_ACT_POR"/>
+    </property>
+    <property name="cliGolOcuAct" type="string">
+      <column length="100" name="CLI_GOL_OCU_ACT"/>
+    </property>
+    <property name="cliGolEmpAct" type="big_decimal">
+      <column name="CLI_GOL_EMP_ACT" precision="22" scale="0"/>
+    </property>
+    <property name="cliGolEstCli" type="big_decimal">
+      <column name="CLI_GOL_EST_CLI" precision="22" scale="0"/>
+    </property>
+    <property name="cliGolEstPad" type="big_decimal">
+      <column name="CLI_GOL_EST_PAD" precision="22" scale="0"/>
+    </property>
+    <property name="cliGolEstMad" type="big_decimal">
+      <column name="CLI_GOL_EST_MAD" precision="22" scale="0"/>
+    </property>
+    <property name="cliGolResCri" type="string">
+      <column length="100" name="CLI_GOL_RES_CRI"/>
+    </property>
+    <property name="cliGolNumDep" type="big_decimal">
+      <column name="CLI_GOL_NUM_DEP" precision="22" scale="0"/>
+    </property>
+    <property name="cliGolDesIng" type="string">
+      <column length="100" name="CLI_GOL_DES_ING"/>
+    </property>
+    <property name="cliGolGasGas" type="string">
+      <column length="100" name="CLI_GOL_GAS_GAS"/>
+    </property>
+    <property name="cliGolAnoCre" type="big_decimal">
+      <column name="CLI_GOL_ANO_CRE" precision="22" scale="0"/>
+    </property>
+    <property name="cliGolMesCre" type="big_decimal">
+      <column name="CLI_GOL_MES_CRE" precision="22" scale="0"/>
+    </property>
+    <property name="cliGolPagAno" type="big_decimal">
+      <column name="CLI_GOL_PAG_ANO" precision="22" scale="0"/>
+    </property>
+    <property name="cliGolPagMes" type="big_decimal">
+      <column name="CLI_GOL_PAG_MES" precision="22" scale="0"/>
+    </property>
+    <property name="dinExtHId" type="string">
+      <column length="100" name="DIN_EXT_H_ID"/>
+    </property>
+    <property name="cliGolDinExt" type="big_decimal">
+      <column name="CLI_GOL_DIN_EXT" precision="22" scale="0"/>
+    </property>
+    <property name="cliGolTarCre" type="java.lang.Character">
+      <column length="1" name="CLI_GOL_TAR_CRE"/>
+    </property>
+    <property name="cliGolNumTar" type="big_decimal">
+      <column name="CLI_GOL_NUM_TAR" precision="22" scale="0"/>
+    </property>
+    <property name="cliGolTarDeb" type="java.lang.Character">
+      <column length="1" name="CLI_GOL_TAR_DEB"/>
+    </property>
+    <property name="cliGolCtaChe" type="java.lang.Character">
+      <column length="1" name="CLI_GOL_CTA_CHE"/>
+    </property>
+    <property name="cliGolCrePer" type="java.lang.Character">
+      <column length="1" name="CLI_GOL_CRE_PER"/>
+    </property>
+    <property name="cliGolCreAut" type="java.lang.Character">
+      <column length="1" name="CLI_GOL_CRE_AUT"/>
+    </property>
+    <property name="cliGolCreHip" type="java.lang.Character">
+      <column length="1" name="CLI_GOL_CRE_HIP"/>
+    </property>
+    <property name="cliGolSegVid" type="java.lang.Character">
+      <column length="1" name="CLI_GOL_SEG_VID"/>
+    </property>
+    <property name="cliGolSegGmm" type="java.lang.Character">
+      <column length="1" name="CLI_GOL_SEG_GMM"/>
+    </property>
+    <property name="cliGolOtrCre" type="java.lang.Character">
+      <column length="1" name="CLI_GOL_OTR_CRE"/>
+    </property>
+    <property name="cliGolDesCre" type="string">
+      <column length="100" name="CLI_GOL_DES_CRE"/>
+    </property>
+    <property name="cliGolGasOtr" type="string">
+      <column length="500" name="CLI_GOL_GAS_OTR"/>
+    </property>
+    <property name="cliGolImpExt" type="java.lang.Double">
+      <column name="CLI_GOL_IMP_EXT" precision="126" scale="0"/>
+    </property>
+    <property name="cliGolImpRen" type="java.lang.Double">
+      <column name="CLI_GOL_IMP_REN" precision="126" scale="0"/>
+    </property>
+    <property name="cliGolParCon" type="java.lang.Double">
+      <column name="CLI_GOL_PAR_CON" precision="126" scale="0"/>
+    </property>
+    <property name="cliGolParHij" type="java.lang.Double">
+      <column name="CLI_GOL_PAR_HIJ" precision="126" scale="0"/>
+    </property>
+    <property name="cliGolParPad" type="java.lang.Double">
+      <column name="CLI_GOL_PAR_PAD" precision="126" scale="0"/>
+    </property>
+    <property name="cliGolParOtr" type="java.lang.Double">
+      <column name="CLI_GOL_PAR_OTR" precision="126" scale="0"/>
+    </property>
+    <property name="cliGolDesAdi" type="string">
+      <column length="100" name="CLI_GOL_DES_ADI"/>
+    </property>
+    <property name="cliGolIng" type="java.lang.Double">
+      <column name="CLI_GOL_ING" precision="126" scale="0"/>
+    </property>
+  </class>
+</hibernate-mapping>

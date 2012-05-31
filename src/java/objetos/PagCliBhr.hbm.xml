@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.PagCliBhr" table="PAG_CLI_BHR">
+    <id name="pagCliBhrId" type="big_decimal">
+      <column name="PAG_CLI_BHR_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="objetos.CliBhr" fetch="select" name="cliBhr">
+      <column name="CLI_BHR_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="pagCliBhrNum" type="big_decimal">
+      <column name="PAG_CLI_BHR_NUM" precision="22" scale="0"/>
+    </property>
+    <property name="pagCliBhrMto" type="java.lang.Double">
+      <column name="PAG_CLI_BHR_MTO" precision="126" scale="0"/>
+    </property>
+  </class>
+</hibernate-mapping>

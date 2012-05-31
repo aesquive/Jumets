@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.CliPso" table="CLI_PSO">
+    <id name="cliPsoId" type="big_decimal">
+      <column name="CLI_PSO_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="cliId" type="big_decimal">
+      <column name="CLI_ID" precision="22" scale="0"/>
+    </property>
+    <property name="cliPsoNumPre" type="big_decimal">
+      <column name="CLI_PSO_NUM_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="cliPsoNumRes" type="big_decimal">
+      <column name="CLI_PSO_NUM_RES" precision="22" scale="0"/>
+    </property>
+  </class>
+</hibernate-mapping>

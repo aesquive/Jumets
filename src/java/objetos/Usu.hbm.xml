@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.Usu" table="USU">
+    <id name="usuId" type="big_decimal">
+      <column name="USU_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="calId" type="big_decimal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </property>
+    <property name="usuDes" type="string">
+      <column length="100" name="USU_DES"/>
+    </property>
+    <property name="usuLimInf" type="java.lang.Double">
+      <column name="USU_LIM_INF" precision="126" scale="0"/>
+    </property>
+    <property name="usuLimSup" type="java.lang.Double">
+      <column name="USU_LIM_SUP" precision="126" scale="0"/>
+    </property>
+    <property name="usuOrdPre" type="big_decimal">
+      <column name="USU_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="usuPto" type="java.lang.Double">
+      <column name="USU_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="usuWoe" type="java.lang.Double">
+      <column name="USU_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="usuDesLar" type="string">
+      <column length="200" name="USU_DES_LAR"/>
+    </property>
+  </class>
+</hibernate-mapping>

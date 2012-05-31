@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.StaMta" table="STA_MTA">
+    <id name="staMtaId" type="big_decimal">
+      <column name="STA_MTA_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="staMtaDes" type="string">
+      <column length="100" name="STA_MTA_DES"/>
+    </property>
+  </class>
+</hibernate-mapping>

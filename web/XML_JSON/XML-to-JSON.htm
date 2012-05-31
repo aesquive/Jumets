@@ -1,0 +1,84 @@
+<html>
+	<head>
+		<title>XML-to-JSON</title>
+		<!--script src="xml2json.js"></script-->
+		<script src="MX_XML.js"></script>
+		<script src="simpleXHR.js"></script>
+
+		<script>
+			onload = function()
+			{
+				divLog = document.getElementById("log");
+				timer = new Timer();
+
+				// 1.xml - check speed (impliment about 100-1000 times)
+				new XHR(LoadOK).send("1.xml");
+
+				// 2.xml - check error no_end_tag
+				//new XHR(LoadOK).send("2.xml");
+
+				// 3.xml - check error end_space
+				//new XHR(LoadOK).send("3.xml");
+
+				// 4.xml - check CDATA handler
+				//new XHR(LoadOK).send("4.xml");
+
+            }
+            LoadOK = function(r)
+            {
+            	// parse by xml-document
+            	Log("----- parse xml -----");
+            	timer.Start("xml-document");
+            	//for(var i=0;i<100;i++)
+            		x1 = MX.XML.ToJSON(r.xml);
+            	timer.Stop("xml-document");
+
+				// put another code here to compare
+				/*
+            	Log("----- parse string -----");
+            	timer.Start("xml2json");
+            	for(var j=0;j<100;j++)
+            		x2 = xml2json.parser(r.text);
+            	timer.Stop("xml2json");
+				*/
+            }
+
+            /* Timer and Log */
+            Log = function(text)
+            {
+            	var d = new Date();
+            	divLog.innerHTML += "&nbsp;["+d.toLocaleTimeString()+"] " + text+"<br/>";
+            }
+            Timer = function()
+            {
+				this.reg = {};
+            }
+            Timer.prototype =
+            {
+            	Start: function(name)
+            	{
+            		this.reg[name] = (new Date()).getTime();
+            	},
+            	Stop: function(name)
+            	{
+            		if(this.reg[name])
+            		{
+            			var t = (new Date()).getTime()-this.reg[name];
+            			var unit = "ms";
+            			if(t>1000)
+            			{
+            				t /=1000;
+            				unit = "s";
+            			}
+            			delete this.reg[name];
+            			Log("Run '"+name+"': " + t + unit);
+            		}
+            		else Log("'"+name+"' hasn't started!");
+            	}
+            }
+		</script>
+	</head>
+	<body>
+		<div id="log" style="color:#41C54B;background:black;width:500px;height:200px;overflow:auto;border:outset 3px white"></div>
+	</body>
+</html>

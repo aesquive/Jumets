@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.RngAntEmp" table="RNG_ANT_EMP">
+    <id name="rngAntEmpId" type="big_decimal">
+      <column name="RNG_ANT_EMP_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="calId" type="big_decimal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </property>
+    <property name="rngAntEmpDes" type="string">
+      <column length="100" name="RNG_ANT_EMP_DES"/>
+    </property>
+    <property name="rngAntEmpLimInf" type="java.lang.Double">
+      <column name="RNG_ANT_EMP_LIM_INF" precision="126" scale="0"/>
+    </property>
+    <property name="rngAntEmpLimSup" type="java.lang.Double">
+      <column name="RNG_ANT_EMP_LIM_SUP" precision="126" scale="0"/>
+    </property>
+    <property name="rngAntEmpOrdPre" type="big_decimal">
+      <column name="RNG_ANT_EMP_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="rngAntEmpPto" type="java.lang.Double">
+      <column name="RNG_ANT_EMP_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="rngAntEmpWoe" type="java.lang.Double">
+      <column name="RNG_ANT_EMP_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="rngAntEmpDesLar" type="string">
+      <column length="200" name="RNG_ANT_EMP_DES_LAR"/>
+    </property>
+  </class>
+</hibernate-mapping>

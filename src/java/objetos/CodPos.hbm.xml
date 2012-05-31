@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.CodPos" table="COD_POS">
+    <id name="codPosId" type="string">
+      <column length="5" name="COD_POS_ID"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="objetos.Edo" fetch="select" name="edo">
+      <column name="EDO_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="codPosNomMun" type="string">
+      <column length="100" name="COD_POS_NOM_MUN"/>
+    </property>
+  </class>
+</hibernate-mapping>

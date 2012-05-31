@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.PagRnt" table="PAG_RNT">
+    <id name="pagRntId" type="big_decimal">
+      <column name="PAG_RNT_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="calId" type="big_decimal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </property>
+    <property name="pagRntDes" type="string">
+      <column length="100" name="PAG_RNT_DES"/>
+    </property>
+    <property name="pagRntLimInf" type="java.lang.Double">
+      <column name="PAG_RNT_LIM_INF" precision="126" scale="0"/>
+    </property>
+    <property name="pagRntLimSup" type="java.lang.Double">
+      <column name="PAG_RNT_LIM_SUP" precision="126" scale="0"/>
+    </property>
+    <property name="pagRntOrdPre" type="big_decimal">
+      <column name="PAG_RNT_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="pagRntPto" type="java.lang.Double">
+      <column name="PAG_RNT_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="pagRntWoe" type="java.lang.Double">
+      <column name="PAG_RNT_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="pagRntDesLar" type="string">
+      <column length="200" name="PAG_RNT_DES_LAR"/>
+    </property>
+    <set inverse="true" name="cliGols">
+      <key>
+        <column name="PAG_RNT_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliGol"/>
+    </set>
+  </class>
+</hibernate-mapping>

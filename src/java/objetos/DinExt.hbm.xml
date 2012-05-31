@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.DinExt" table="DIN_EXT">
+    <id name="dinExtId" type="big_decimal">
+      <column name="DIN_EXT_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="objetos.Cal" fetch="select" name="cal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="dinExtDes" type="string">
+      <column length="100" name="DIN_EXT_DES"/>
+    </property>
+    <property name="dinExtLimInf" type="java.lang.Double">
+      <column name="DIN_EXT_LIM_INF" precision="126" scale="0"/>
+    </property>
+    <property name="dinExtLimSup" type="java.lang.Double">
+      <column name="DIN_EXT_LIM_SUP" precision="126" scale="0"/>
+    </property>
+    <property name="dinExtOrdPre" type="big_decimal">
+      <column name="DIN_EXT_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="dinExtPto" type="java.lang.Double">
+      <column name="DIN_EXT_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="dinExtWoe" type="java.lang.Double">
+      <column name="DIN_EXT_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="dinExtDesLar" type="string">
+      <column length="200" name="DIN_EXT_DES_LAR"/>
+    </property>
+    <set inverse="true" name="cliGols">
+      <key>
+        <column name="DIN_EXT_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliGol"/>
+    </set>
+    <set inverse="true" name="cliMtas">
+      <key>
+        <column name="DIN_EXT_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliMta"/>
+    </set>
+  </class>
+</hibernate-mapping>

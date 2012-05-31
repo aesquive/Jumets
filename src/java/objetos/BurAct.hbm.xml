@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.BurAct" table="BUR_ACT">
+    <id name="burActId" type="big_decimal">
+      <column name="BUR_ACT_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="objetos.Cal" fetch="select" name="cal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="burActDes" type="string">
+      <column length="100" name="BUR_ACT_DES"/>
+    </property>
+    <property name="burActLimInf" type="java.lang.Double">
+      <column name="BUR_ACT_LIM_INF" precision="126" scale="0"/>
+    </property>
+    <property name="burActLimSup" type="java.lang.Double">
+      <column name="BUR_ACT_LIM_SUP" precision="126" scale="0"/>
+    </property>
+    <property name="burActOrdPre" type="big_decimal">
+      <column name="BUR_ACT_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="burActPto" type="java.lang.Double">
+      <column name="BUR_ACT_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="burActWoe" type="java.lang.Double">
+      <column name="BUR_ACT_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="burActDesLar" type="string">
+      <column length="200" name="BUR_ACT_DES_LAR"/>
+    </property>
+    <set inverse="true" name="cliMtas">
+      <key>
+        <column name="BUR_ACT_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliMta"/>
+    </set>
+    <set inverse="true" name="cliBursForBurAntId">
+      <key>
+        <column name="BUR_ANT_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliBur"/>
+    </set>
+  </class>
+</hibernate-mapping>

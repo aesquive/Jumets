@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>Men&uacute; Principal</title>
+<!-- TemplateEndEditable -->
+<link href="../css/main2.css" rel="stylesheet" type="text/css" />
+<link href="../css/textos.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="../js/funciones.js"></script>
+<!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<link href="../css/formulario.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+-->
+</style></head>
+<body >
+<center>
+<div id="contenedor">
+  <div id="encabezado">
+    <div id="borde_iz"></div>
+	<div id="logo">
+	<div id="data"><!-- TemplateBeginEditable name="Region3" -->Region3<!-- TemplateEndEditable -->	</div>
+	</div>
+	<div id="relleno">
+	<div id="capa_enc">
+	<!-- TemplateBeginEditable name="region1" -->
+	<label class="blueSubtitle"></label>
+	<!-- TemplateEndEditable -->
+	</div>
+	</div>	
+	<div id="borde_der"></div>
+	<div id="contenido">
+	<!-- TemplateBeginEditable name="Region2" -->Reg ion2<!-- TemplateEndEditable -->    
+	</div>
+	<div id="pie_pag"></div>
+</div>
+</div>
+</center>
+</body>
+</html>

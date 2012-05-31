@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.BanCmp" table="BAN_CMP">
+    <id name="banCmpId" type="big_decimal">
+      <column name="BAN_CMP_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="objetos.Cal" fetch="select" name="cal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="banCmpDes" type="string">
+      <column length="100" name="BAN_CMP_DES"/>
+    </property>
+    <property name="banCmpLimInf" type="java.lang.Double">
+      <column name="BAN_CMP_LIM_INF" precision="126" scale="0"/>
+    </property>
+    <property name="banCmpLimSup" type="java.lang.Double">
+      <column name="BAN_CMP_LIM_SUP" precision="126" scale="0"/>
+    </property>
+    <property name="banCmpOrdPre" type="big_decimal">
+      <column name="BAN_CMP_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="banCmpPto" type="java.lang.Double">
+      <column name="BAN_CMP_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="banCmpWoe" type="java.lang.Double">
+      <column name="BAN_CMP_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="banCmpDesLar" type="string">
+      <column length="200" name="BAN_CMP_DES_LAR"/>
+    </property>
+  </class>
+</hibernate-mapping>

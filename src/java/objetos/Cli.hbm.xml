@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.Cli" table="CLI">
+    <id name="cliId" type="int">
+      <column name="CLI_ID" precision="22" scale="0"/>
+      <generator class="increment"/>
+    </id>
+    <!--many-to-one class="objetos.Cal" fetch="select" insert="false" name="cal" update="false">
+      <column name="CAL_ID" not-null="true" precision="22" scale="0" unique="true"/>
+    </many-to-one-->
+    <property name="calId" type="int">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </property>
+    <property name="cliApePat" type="string">
+      <column length="100" name="CLI_APE_PAT"/>
+    </property>
+    <property name="cliApeMat" type="string">
+      <column length="100" name="CLI_APE_MAT"/>
+    </property>
+    <property name="cliNom" type="string">
+      <column length="80" name="CLI_NOM"/>
+    </property>
+    <property name="cliFecNac" type="date">
+      <column length="7" name="CLI_FEC_NAC"/>
+    </property>
+    <property name="cliDomCal" type="string">
+      <column length="100" name="CLI_DOM_CAL"/>
+    </property>
+    <property name="cliDomNumExt" type="string">
+      <column length="10" name="CLI_DOM_NUM_EXT"/>
+    </property>
+    <property name="cliDomNumInt" type="string">
+      <column length="10" name="CLI_DOM_NUM_INT"/>
+    </property>
+    <property name="cliDomCol" type="string">
+      <column length="100" name="CLI_DOM_COL"/>
+    </property>
+    <property name="codPosId" type="string">
+      <column length="5" name="COD_POS_ID"/>
+    </property>
+    <property name="cliRFC" type="string">
+      <column length="10" name="CLI_RFC"/>
+    </property>
+    <property name="cliEdad" type="string">
+      <column length="10" name="CLI_EDAD"/>
+    </property>
+    <set inverse="true" name="cliMtas">
+      <key>
+        <column name="CLI_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliMta"/>
+    </set>
+    <set inverse="true" name="cliPprs">
+      <key>
+        <column name="CLI_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliPpr"/>
+    </set>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.4-b01-. --><xs:schema xmlns:tns="http://servicios/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicios/">
+
+<xs:element name="CalculaB" type="tns:CalculaB"></xs:element>
+
+<xs:element name="CalculaBResponse" type="tns:CalculaBResponse"></xs:element>
+
+<xs:element name="CalculaCM" type="tns:CalculaCM"></xs:element>
+
+<xs:element name="CalculaCMResponse" type="tns:CalculaCMResponse"></xs:element>
+
+<xs:element name="CalculaNE" type="tns:CalculaNE"></xs:element>
+
+<xs:element name="CalculaNEResponse" type="tns:CalculaNEResponse"></xs:element>
+
+<xs:element name="CalcularCG" type="tns:CalcularCG"></xs:element>
+
+<xs:element name="CalcularCGResponse" type="tns:CalcularCGResponse"></xs:element>
+
+<xs:element name="CalcularPP" type="tns:CalcularPP"></xs:element>
+
+<xs:element name="CalcularPPResponse" type="tns:CalcularPPResponse"></xs:element>
+
+<xs:element name="Test" type="tns:Test"></xs:element>
+
+<xs:element name="TestResponse" type="tns:TestResponse"></xs:element>
+
+<xs:complexType name="CalculaCM">
+<xs:sequence>
+<xs:element name="xmlIN" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CalculaCMResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CalculaB">
+<xs:sequence>
+<xs:element name="url" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CalculaBResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CalcularPP">
+<xs:sequence>
+<xs:element name="url" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CalcularPPResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Test">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="TestResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CalculaNE">
+<xs:sequence>
+<xs:element name="xmlIn" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CalculaNEResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CalcularCG">
+<xs:sequence>
+<xs:element name="xmlIN" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CalcularCGResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

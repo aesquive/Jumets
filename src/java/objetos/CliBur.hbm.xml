@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.CliBur" table="CLI_BUR">
+    <id name="cliBurId" type="big_decimal">
+      <column name="CLI_BUR_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="objetos.BurAct" fetch="select" name="burActByBurActId">
+      <column name="BUR_ACT_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.BurPag" fetch="select" name="burPag">
+      <column name="BURO_PAG_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.CliMta" fetch="select" name="cliMta">
+      <column name="CLI_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.BurUso" fetch="select" name="burUso">
+      <column name="BUR_USO_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.BurHis" fetch="select" name="burHis">
+      <column name="BUR_HIS_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.BurAct" fetch="select" name="burActByBurAntId">
+      <column name="BUR_ANT_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="cliBurCveMop" type="big_decimal">
+      <column name="CLI_BUR_CVE_MOP" precision="22" scale="0"/>
+    </property>
+    <property name="cliBurImpMop" type="java.lang.Double">
+      <column name="CLI_BUR_IMP_MOP" precision="126" scale="0"/>
+    </property>
+    <property name="cliBurTpoMop" type="string">
+      <column length="100" name="CLI_BUR_TPO_MOP"/>
+    </property>
+    <property name="cliBurPagMop" type="java.lang.Double">
+      <column name="CLI_BUR_PAG_MOP" precision="126" scale="0"/>
+    </property>
+    <property name="cliBurNumAbi" type="big_decimal">
+      <column name="CLI_BUR_NUM_ABI" precision="22" scale="0"/>
+    </property>
+    <property name="cliBurMaxAbi" type="big_decimal">
+      <column name="CLI_BUR_MAX_ABI" precision="22" scale="0"/>
+    </property>
+    <property name="cliBurMonAbi" type="java.lang.Double">
+      <column name="CLI_BUR_MON_ABI" precision="126" scale="0"/>
+    </property>
+    <property name="cliBurLimAbi" type="java.lang.Double">
+      <column name="CLI_BUR_LIM_ABI" precision="126" scale="0"/>
+    </property>
+    <property name="cliBurSalAbi" type="java.lang.Double">
+      <column name="CLI_BUR_SAL_ABI" precision="126" scale="0"/>
+    </property>
+    <property name="cliBurNumCer" type="big_decimal">
+      <column name="CLI_BUR_NUM_CER" precision="22" scale="0"/>
+    </property>
+    <property name="cliBurMaxCer" type="big_decimal">
+      <column name="CLI_BUR_MAX_CER" precision="22" scale="0"/>
+    </property>
+    <property name="cliBurMonCer" type="big_decimal">
+      <column name="CLI_BUR_MON_CER" precision="22" scale="0"/>
+    </property>
+    <property name="cliBurLimCer" type="java.lang.Double">
+      <column name="CLI_BUR_LIM_CER" precision="126" scale="0"/>
+    </property>
+    <property name="cliBurSalCer" type="java.lang.Double">
+      <column name="CLI_BUR_SAL_CER" precision="126" scale="0"/>
+    </property>
+  </class>
+</hibernate-mapping>

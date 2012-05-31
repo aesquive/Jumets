@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.TipEmp" table="TIP_EMP">
+    <id name="tipEmpId" type="big_decimal">
+      <column name="TIP_EMP_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="calId" type="big_decimal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </property>
+    <property name="tipEmpDes" type="string">
+      <column length="100" name="TIP_EMP_DES"/>
+    </property>
+    <property name="tipEmpLimInf" type="java.lang.Double">
+      <column name="TIP_EMP_LIM_INF" precision="126" scale="0"/>
+    </property>
+    <property name="tipEmpLimSup" type="java.lang.Double">
+      <column name="TIP_EMP_LIM_SUP" precision="126" scale="0"/>
+    </property>
+    <property name="tipEmpOrdPre" type="big_decimal">
+      <column name="TIP_EMP_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="tipEmpPto" type="java.lang.Double">
+      <column name="TIP_EMP_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="tipEmpWoe" type="java.lang.Double">
+      <column name="TIP_EMP_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="tipEmpDesLar" type="string">
+      <column length="200" name="TIP_EMP_DES_LAR"/>
+    </property>
+    <set inverse="true" name="cliGols">
+      <key>
+        <column name="TIP_EMP_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliGol"/>
+    </set>
+    <set inverse="true" name="cliMtas">
+      <key>
+        <column name="TIP_EMP_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliMta"/>
+    </set>
+  </class>
+</hibernate-mapping>

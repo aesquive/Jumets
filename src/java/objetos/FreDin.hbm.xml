@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.FreDin" table="FRE_DIN">
+    <id name="freDinId" type="big_decimal">
+      <column name="FRE_DIN_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="objetos.Cal" fetch="select" name="cal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="freDinDes" type="string">
+      <column length="100" name="FRE_DIN_DES"/>
+    </property>
+    <property name="freDinLimInf" type="java.lang.Double">
+      <column name="FRE_DIN_LIM_INF" precision="126" scale="0"/>
+    </property>
+    <property name="freDinLimSup" type="java.lang.Double">
+      <column name="FRE_DIN_LIM_SUP" precision="126" scale="0"/>
+    </property>
+    <property name="freDinOrdPre" type="big_decimal">
+      <column name="FRE_DIN_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="freDinPto" type="java.lang.Double">
+      <column name="FRE_DIN_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="freDinWoe" type="java.lang.Double">
+      <column name="FRE_DIN_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="freDinDesLar" type="string">
+      <column length="200" name="FRE_DIN_DES_LAR"/>
+    </property>
+    <set inverse="true" name="cliGols">
+      <key>
+        <column name="FRE_DIN_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliGol"/>
+    </set>
+  </class>
+</hibernate-mapping>

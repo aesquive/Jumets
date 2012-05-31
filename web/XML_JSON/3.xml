@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<table >
+	<columns>
+		<column id="1" index="1" width="200" css="CssName1">
+			<module id="a12844ce-b5b2-4fb9-955c-bad9d3289b29" moduleName="PhotoModule" path="modules/module1.ascx" priority="102" arguments="0" />
+		</column>
+		<column id="2" index="1" width="200" css="CssName1">
+		</column>
+		<column id="3" index="1" width="200" css="CssName1">
+		</column>
+	</columns>
+</table>

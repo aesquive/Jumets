@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="CalculadoraNEWS">
+      <implementation-class>webservice.CalculadoraNEWS</implementation-class>
+    </service>
+    <service name="CalculadoraCGWS">
+      <implementation-class>webservice.CalculadoraCGWS</implementation-class>
+    </service>
+    <service name="CalculadoraCMWS">
+      <implementation-class>webservice.CalculadoraCMWS</implementation-class>
+    </service>
+    <service name="CalculadoraPPWS">
+      <implementation-class>webservice.CalculadoraPPWS</implementation-class>
+    </service>
+    <service name="GolWs">
+      <implementation-class>com.urbi.gol.GolWs</implementation-class>
+    </service>
+    <service name="CalculadoraBWS">
+      <implementation-class>webservice.CalculadoraBWS</implementation-class>
+    </service>
+  </services>
+  <clients/>
+  <jsr109>false</jsr109>
+</jax-ws>

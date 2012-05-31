@@ -1,0 +1,111 @@
+package mx.gob.sat.sios.dyc.servlet;
+
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.omg.CORBA.ExceptionList;
+
+import mx.gob.sat.sios.dyc.dominio.DocumentoVO;
+import mx.gob.sat.sios.dyc.fachada.documentum.DocumentumServicioPortType;
+import mx.gob.sat.sios.dyc.fachada.documentum.DocumentumServicioPortTypeProxy;
+import mx.gob.sat.sios.dyc.fachada.entidad.DocumentoServicioPortType;
+import mx.gob.sat.sios.dyc.fachada.entidad.DocumentoServicioPortTypeProxy;
+import mx.gob.sat.sios.dyc.util.Util;
+
+public class DescargarDocumentoServlet extends HttpServlet {
+
+	
+	
+	public void procesaArchivos(HttpServletRequest req, HttpServletResponse res) {
+		
+		try{
+			System.out.println("Entrando en el servlet");
+			// Check that we have a file upload request
+			
+			DocumentoServicioPortType documento = new DocumentoServicioPortTypeProxy();
+			
+			int numero = Integer.parseInt(req.getParameter("numero").trim());
+			//System.out.println("numero del archivo:"+numero+":");
+			
+			DocumentoVO docVO = documento.consultarDetalle(numero);
+						
+			byte[] decodificado=null;
+			
+			//TODO hardcode
+//			docVO.setRObjectId("0900000380005164");
+			
+			if(docVO.getRObjectId()==null){
+				System.out.println("extrayendo de BD");
+				decodificado = docVO.getContenidoDocumento();				
+			}
+			else
+				if(docVO.getRObjectId().equals("null")){
+					System.out.println("extrayendo de BD 2");
+					decodificado = docVO.getContenidoDocumento();
+				}else{
+					System.out.println("extrayendo de documentum");
+					DocumentumServicioPortType documentum = new DocumentumServicioPortTypeProxy();
+					decodificado = documentum.regresaDocumentoRepositorio(docVO.getRObjectId());
+				}		
+			
+			Util util = new Util(); 
+			String mimeType = "msexcel";
+			String contenido = "application/";
+			if(docVO.getNombreDocumento().length()>4){
+				String extencion = docVO.getNombreDocumento().substring(docVO.getNombreDocumento().length()-3, docVO.getNombreDocumento().length());
+				if(extencion.equals("txt")){
+					mimeType = "txt";
+					contenido = "text/";
+				}
+				else{	
+					mimeType = util.getMimeType(decodificado);
+					System.out.println("revisando extencion");
+					if(mimeType.trim().equals("msword")&&extencion.equals("xls"))
+						mimeType = "msexcel";	
+				}
+				System.out.println("\nnombre del archivo="+docVO.getNombreDocumento()+":\nextencion del archivo="+extencion+"\ntipo de documento="+mimeType+":");
+			}
+			//byte[] decodificado = decoder(""); 
+			//System.out.println("archivo decodificado:\n"+decodificado+"\nfin del archivo decodificado");
+			//System.out.println("#####Archivo Recuperado#####");	    
+			//res.setContentType("application/pdf");
+			res.setContentType(contenido+mimeType);
+			res.setContentLength(decodificado.length);
+			res.setHeader("Content-Disposition", "attachment; filename=" +docVO.getNombreDocumento().replace(" ", "_"));
+			//res.ContentType = "pdf";
+			OutputStream ouputStream = res.getOutputStream();
+			ouputStream.write(decodificado, 0, decodificado.length);
+			ouputStream.flush();
+			ouputStream.close();
+		}catch(mx.gob.sat.sios.dyc.comun.DevolCompFaultDetail e){
+			e.printStackTrace();
+			try{
+				PrintWriter out = res.getWriter();	
+				out.println("{'resultado':'fallo'}"); 
+				out.flush();
+				out.close();
+			}catch(Exception ex){}
+		}
+		catch(Exception e){
+			e.printStackTrace();
+			try{
+				PrintWriter out = res.getWriter();	
+				out.println("{'resultado':'fallo'}"); 
+				out.flush();
+				out.close();
+			}catch(Exception ex){}
+		}
+			     
+	}	
+		
+		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			// TODO Auto-generated method stub
+			procesaArchivos(request, response);
+		}
+}

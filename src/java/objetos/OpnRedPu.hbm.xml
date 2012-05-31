@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.OpnRedPu" table="OPN_RED_PU">
+    <id name="opnRedPuId" type="big_decimal">
+      <column name="OPN_RED_PU_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="calId" type="big_decimal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </property>
+    <property name="opnRedPuDes" type="string">
+      <column length="100" name="OPN_RED_PU_DES"/>
+    </property>
+    <property name="opnRedPuLimInf" type="java.lang.Double">
+      <column name="OPN_RED_PU_LIM_INF" precision="126" scale="0"/>
+    </property>
+    <property name="opnRedPuLimSup" type="java.lang.Double">
+      <column name="OPN_RED_PU_LIM_SUP" precision="126" scale="0"/>
+    </property>
+    <property name="opnRedPuOrdPre" type="big_decimal">
+      <column name="OPN_RED_PU_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="opnRedPuPto" type="java.lang.Double">
+      <column name="OPN_RED_PU_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="opnRedPuWoe" type="java.lang.Double">
+      <column name="OPN_RED_PU_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="opnRedPuDesLar" type="string">
+      <column length="200" name="OPN_RED_PU_DES_LAR"/>
+    </property>
+  </class>
+</hibernate-mapping>

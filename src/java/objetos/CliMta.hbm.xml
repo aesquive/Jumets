@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.CliMta" table="CLI_MTA">
+    <id name="cliMtaId" type="int">
+      <column name="CLI_MTA_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="objetos.Cli" fetch="select" name="cli">
+      <column name="CLI_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.NivEst" fetch="select" name="nivEst">
+      <column name="NIV_EST_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.DinExt" fetch="select" name="dinExt">
+      <column name="DIN_EXT_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.Cal" fetch="select" name="cal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.ProAnoGto" fetch="select" name="proAnoGto">
+      <column name="PRO_ANO_GTO_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.BanPorUso" fetch="select" name="banPorUso">
+      <column name="BAR_POR_USO_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.BurUso" fetch="select" name="burUso">
+      <column name="BURO_USO_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.DepEco" fetch="select" name="depEco">
+      <column name="DEP_ECO_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.Mig" fetch="select" name="mig">
+      <column name="MIG_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.Edo" fetch="select" name="edo">
+      <column name="EDO_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.TipRes" fetch="select" name="tipRes">
+      <column name="TIP_RES_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.OpnBar" fetch="select" name="opnBar">
+      <column name="OPN_BAR_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.Rol" fetch="select" name="rol">
+      <column name="ROL_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.Rel" fetch="select" name="rel">
+      <column name="REL_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.Eda" fetch="select" name="eda">
+      <column name="CLI_EDA_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.BurAct" fetch="select" name="burAct">
+      <column name="BUR_ACT_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.Ocp" fetch="select" name="ocp">
+      <column name="OCP_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.TipEmp" fetch="select" name="tipEmp">
+      <column name="TIP_EMP_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.BurHis" fetch="select" name="burHis">
+      <column name="BUR_HIS_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.Ptm" fetch="select" name="ptm">
+      <column name="PTM_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.BurAnt" fetch="select" name="burAnt">
+      <column name="BUR_ANT_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.ParPlt" fetch="select" name="parPlt">
+      <column name="PAR_PLT_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.BurPag" fetch="select" name="burPag">
+      <column name="BUR_PAG_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.Gpo" fetch="select" name="gpo">
+      <column name="GPO_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.Rld" fetch="select" name="rld">
+      <column name="RLD_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.AsoPar" fetch="select" name="asoPar">
+      <column name="ASO_PAR_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.ActExt" fetch="select" name="actExt">
+      <column name="ACT_EXT_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.EdoCvl" fetch="select" name="edoCvl">
+      <column name="EDO_CVL_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.Ing" fetch="select" name="ing">
+      <column name="ING_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.BanPorPag" fetch="select" name="banPorPag">
+      <column name="BAN_POR_PAG_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.Sex" fetch="select" name="sex">
+      <column name="SEX_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="cliFecNac" type="date">
+      <column length="7" name="CLI_FEC_NAC"/>
+    </property>
+    <property name="codPosId" type="string">
+      <column length="5" name="COD_POS_ID"/>
+    </property>
+    <property name="cliAntRes" type="java.lang.Double">
+      <column name="CLI_ANT_RES" precision="126" scale="0"/>
+    </property>
+    <property name="cliAntEmp" type="java.lang.Double">
+      <column name="CLI_ANT_EMP" precision="126" scale="0"/>
+    </property>
+    <property name="banCmpId" type="big_decimal">
+      <column name="BAN_CMP_ID" precision="22" scale="0"/>
+    </property>
+    <property name="cliIndTarCre" type="java.lang.Character">
+      <column length="1" name="CLI_IND_TAR_CRE"/>
+    </property>
+    <property name="cliIndBurCre" type="java.lang.Character">
+      <column length="1" name="CLI_IND_BUR_CRE"/>
+    </property>
+    <property name="cliDesOcu" type="string">
+      <column length="100" name="CLI_DES_OCU"/>
+    </property>
+    <property name="cliIngMen" type="big_decimal">
+      <column name="CLI_ING_MEN" precision="22" scale="0"/>
+    </property>
+    <property name="desId" type="big_decimal">
+      <column name="DES_ID" precision="22" scale="0"/>
+    </property>
+    <property name="cliValViv" type="big_decimal">
+      <column name="CLI_VAL_VIV" precision="22" scale="0"/>
+    </property>
+    <property name="cliValMen" type="big_decimal">
+      <column name="CLI_VAL_MEN" precision="22" scale="0"/>
+    </property>
+    <set inverse="true" name="cliBurs">
+      <key>
+        <column name="CLI_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliBur"/>
+    </set>
+    <set inverse="true" name="cliGols">
+      <key>
+        <column name="CLI_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliGol"/>
+    </set>
+  </class>
+</hibernate-mapping>

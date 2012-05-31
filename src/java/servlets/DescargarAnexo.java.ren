@@ -1,0 +1,84 @@
+/**
+ * 
+ */
+package mx.gob.sat.sios.dyc.servlet;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.xml.rpc.holders.ByteArrayHolder;
+import javax.xml.rpc.holders.StringHolder;
+
+import mx.gob.sat.www.stii.dyc.dctm.service.TipoAnexo.TipoAnexoServicePortTypeProxy;
+
+import org.apache.axis.AxisFault;
+
+/**
+ * 
+ * @author Christian S&aacute;nchez
+ * 
+ */
+public class DescargarAnexo extends HttpServlet {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private static String CONTENT_TYPE_XLSX = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+	private static String CONTENT_TYPE_XLS = "application/vnd.ms-excel";
+
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+
+		String idAnexo;
+		ServletOutputStream servletOutputStream = null;
+		ByteArrayHolder anexo = new ByteArrayHolder();
+		String nombreAnexo;
+		StringHolder extension = new StringHolder();
+
+		idAnexo = request.getParameter("idAnexo");
+
+		nombreAnexo = request.getParameter("nombreAnexo");
+
+		TipoAnexoServicePortTypeProxy tipoAnexoService = new TipoAnexoServicePortTypeProxy();
+		try {
+			tipoAnexoService.descargarArchivoTipoAnexo(idAnexo, anexo,
+					extension);
+			if (anexo.value.length > 0) {
+				if (extension.value.equalsIgnoreCase("XLS")) {
+					response.setContentType(CONTENT_TYPE_XLS);
+				} else {
+					response.setContentType(CONTENT_TYPE_XLSX);
+				}
+
+				response.setContentLength(anexo.value.length);
+				response.setHeader("Cache-Control", "cache"); // to make IE
+				// work!
+				response.setHeader("Pragma", "cache"); // to make IE work!
+				response.setHeader("Content-Disposition",
+						"attachment; filename=" + nombreAnexo);
+				servletOutputStream = response.getOutputStream();
+				servletOutputStream.write(anexo.value, 0, anexo.value.length);
+				servletOutputStream.flush();
+				servletOutputStream.close();
+			} else {
+				servletOutputStream = response.getOutputStream();
+				servletOutputStream
+						.print("<html> <body><script language=\"javascript\"> alert('No se encontro el anexo, reportelo con el administrador del sistema'); window.close(); </script></body> </html>");
+				servletOutputStream.flush();
+				servletOutputStream.close();
+			}
+		} catch (AxisFault e) {
+			servletOutputStream = response.getOutputStream();
+			servletOutputStream
+					.print("<html> <body><script language=\"javascript\"> alert('No se encontro el anexo, reportelo con el administrador del sistema'); window.close(); </script></body> </html>");
+			servletOutputStream.flush();
+			servletOutputStream.close();
+		}
+	}
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.ApoHij" table="APO_HIJ">
+    <id name="apoHijId" type="big_decimal">
+      <column name="APO_HIJ_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="objetos.Cal" fetch="select" name="cal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="apoHijDes" type="string">
+      <column length="100" name="APO_HIJ_DES"/>
+    </property>
+    <property name="apoHijLimInf" type="java.lang.Double">
+      <column name="APO_HIJ_LIM_INF" precision="126" scale="0"/>
+    </property>
+    <property name="apoHijLimSup" type="java.lang.Double">
+      <column name="APO_HIJ_LIM_SUP" precision="126" scale="0"/>
+    </property>
+    <property name="apoHijOrdPre" type="big_decimal">
+      <column name="APO_HIJ_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="apoHijPto" type="java.lang.Double">
+      <column name="APO_HIJ_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="apoHijWoe" type="java.lang.Double">
+      <column name="APO_HIJ_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="apoHijDesLar" type="string">
+      <column length="200" name="APO_HIJ_DES_LAR"/>
+    </property>
+    <set inverse="true" name="cliGols">
+      <key>
+        <column name="APO_HIJ_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliGol"/>
+    </set>
+  </class>
+</hibernate-mapping>

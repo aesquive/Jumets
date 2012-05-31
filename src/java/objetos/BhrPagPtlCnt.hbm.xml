@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.BhrPagPtlCnt" table="BHR_PAG_PTL_CNT">
+    <id name="bhrPagPtlCntId" type="big_decimal">
+      <column name="BHR_PAG_PTL_CNT_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="calId" type="big_decimal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </property>
+    <property name="bhrPagPtlCntDes" type="string">
+      <column length="100" name="BHR_PAG_PTL_CNT_DES"/>
+    </property>
+    <property name="bhrPagPtlCntLimInf" type="java.lang.Double">
+      <column name="BHR_PAG_PTL_CNT_LIM_INF" precision="126" scale="0"/>
+    </property>
+    <property name="bhrPagPtlCntLimSup" type="java.lang.Double">
+      <column name="BHR_PAG_PTL_CNT_LIM_SUP" precision="126" scale="0"/>
+    </property>
+    <property name="bhrPagPtlCntOrdPre" type="big_decimal">
+      <column name="BHR_PAG_PTL_CNT_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="bhrPagPtlCntPto" type="java.lang.Double">
+      <column name="BHR_PAG_PTL_CNT_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="bhrPagPtlCntWoe" type="java.lang.Double">
+      <column name="BHR_PAG_PTL_CNT_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="bhrPagPtlCntDesLar" type="string">
+      <column length="200" name="BHR_PAG_PTL_CNT_DES_LAR"/>
+    </property>
+    <set inverse="true" name="cliBhrs">
+      <key>
+        <column name="BHR_PAG_PTL_CNT" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliBhr"/>
+    </set>
+  </class>
+</hibernate-mapping>

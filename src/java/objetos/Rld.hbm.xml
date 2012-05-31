@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.Rld" table="RLD">
+    <id name="rldId" type="big_decimal">
+      <column name="RLD_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="calId" type="big_decimal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </property>
+    <property name="rldDes" type="string">
+      <column length="100" name="RLD_DES"/>
+    </property>
+    <property name="rldLimInf" type="java.lang.Double">
+      <column name="RLD_LIM_INF" precision="126" scale="0"/>
+    </property>
+    <property name="rldLimSup" type="java.lang.Double">
+      <column name="RLD_LIM_SUP" precision="126" scale="0"/>
+    </property>
+    <property name="rldOrdPre" type="big_decimal">
+      <column name="RLD_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="rldPto" type="java.lang.Double">
+      <column name="RLD_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="rldWoe" type="java.lang.Double">
+      <column name="RLD_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="rldDesLar" type="string">
+      <column length="200" name="RLD_DES_LAR"/>
+    </property>
+    <set inverse="true" name="cliMtas">
+      <key>
+        <column name="RLD_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliMta"/>
+    </set>
+  </class>
+</hibernate-mapping>

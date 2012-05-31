@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<EVENTS>
+    <EVENT TYPE="informal">
+       <EVENT_TITLE>15th Award Ceremony</EVENT_TITLE>
+       <EVENT_NUMBER>1207</EVENT_NUMBER>
+       <SUBJECT>Gala Event</SUBJECT>
+       <DATE>7/4/2003</DATE>
+       <PEOPLE>
+           <PERSON ATTENDENCE="present">
+               <FIRST_NAME>Sam</FIRST_NAME>
+               <LAST_NAME>Edwards</LAST_NAME>
+           </PERSON>
+           <PERSON ATTENDENCE="absent">
+               <FIRST_NAME>Sally</FIRST_NAME>
+               <LAST_NAME>Jackson</LAST_NAME>
+           </PERSON>
+           <PERSON ATTENDENCE="present">
+               <FIRST_NAME>Cary</FIRST_NAME>
+                <LAST_NAME>Grant</LAST_NAME>
+            </PERSON>
+        </PEOPLE>
+    </EVENT>
+</EVENTS>

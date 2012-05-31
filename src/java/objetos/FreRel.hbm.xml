@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.FreRel" table="FRE_REL">
+    <id name="freRelId" type="big_decimal">
+      <column name="FRE_REL_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="objetos.Cal" fetch="select" name="cal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="freRelDes" type="string">
+      <column length="100" name="FRE_REL_DES"/>
+    </property>
+    <property name="freRelLimInf" type="java.lang.Double">
+      <column name="FRE_REL_LIM_INF" precision="126" scale="0"/>
+    </property>
+    <property name="freRelLimSup" type="java.lang.Double">
+      <column name="FRE_REL_LIM_SUP" precision="126" scale="0"/>
+    </property>
+    <property name="freRelOrdPre" type="big_decimal">
+      <column name="FRE_REL_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="freRelPto" type="java.lang.Double">
+      <column name="FRE_REL_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="freRelWoe" type="java.lang.Double">
+      <column name="FRE_REL_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="freRelDesLar" type="string">
+      <column length="200" name="FRE_REL_DES_LAR"/>
+    </property>
+    <set inverse="true" name="cliGols">
+      <key>
+        <column name="FRE_REL_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliGol"/>
+    </set>
+  </class>
+</hibernate-mapping>

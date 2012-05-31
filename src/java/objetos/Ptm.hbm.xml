@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.Ptm" table="PTM">
+    <id name="ptmId" type="big_decimal">
+      <column name="PTM_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="calId" type="big_decimal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </property>
+    <property name="ptmDes" type="string">
+      <column length="100" name="PTM_DES"/>
+    </property>
+    <property name="ptmLimInf" type="java.lang.Double">
+      <column name="PTM_LIM_INF" precision="126" scale="0"/>
+    </property>
+    <property name="ptmLimSup" type="java.lang.Double">
+      <column name="PTM_LIM_SUP" precision="126" scale="0"/>
+    </property>
+    <property name="ptmOrdPre" type="big_decimal">
+      <column name="PTM_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="ptmPto" type="java.lang.Double">
+      <column name="PTM_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="ptmWoe" type="java.lang.Double">
+      <column name="PTM_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="ptmDesLar" type="string">
+      <column length="200" name="PTM_DES_LAR"/>
+    </property>
+    <set inverse="true" name="cliGols">
+      <key>
+        <column name="PTM_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliGol"/>
+    </set>
+    <set inverse="true" name="cliMtas">
+      <key>
+        <column name="PTM_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliMta"/>
+    </set>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.AsoPar" table="ASO_PAR">
+    <id name="asoParId" type="big_decimal">
+      <column name="ASO_PAR_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="objetos.Cal" fetch="select" name="cal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="asoParDes" type="string">
+      <column length="100" name="ASO_PAR_DES"/>
+    </property>
+    <property name="asoParLimInf" type="java.lang.Double">
+      <column name="ASO_PAR_LIM_INF" precision="126" scale="0"/>
+    </property>
+    <property name="asoParLimSup" type="java.lang.Double">
+      <column name="ASO_PAR_LIM_SUP" precision="126" scale="0"/>
+    </property>
+    <property name="asoParOrdPre" type="big_decimal">
+      <column name="ASO_PAR_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="asoParPto" type="java.lang.Double">
+      <column name="ASO_PAR_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="asoParWoe" type="java.lang.Double">
+      <column name="ASO_PAR_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="asoParDesLar" type="string">
+      <column length="200" name="ASO_PAR_DES_LAR"/>
+    </property>
+    <set inverse="true" name="cliMtas">
+      <key>
+        <column name="ASO_PAR_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliMta"/>
+    </set>
+  </class>
+</hibernate-mapping>

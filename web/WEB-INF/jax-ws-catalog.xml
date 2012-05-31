@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8084/WStomcat5.5.27/CalculadorasWS?wsdl" uri="wsdl/localhost_8084/WStomcat5.5.27/CalculadorasWS.wsdl"/>
+    <system systemId="http://localhost:8084/WStomcat5.5.27/CalculadorasWS?xsd=1" uri="wsdl/localhost_8084/WStomcat5.5.27/CalculadorasWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8081/CalculadorasWS/CalculadoraPPWSService?wsdl" uri="wsdl/localhost_8081/CalculadorasWS/CalculadoraPPWSService.wsdl"/>
+    <system systemId="http://localhost:8081/CalculadorasWS/CalculadoraPPWSService?xsd=1" uri="wsdl/localhost_8081/CalculadorasWS/CalculadoraPPWSService.xsd_1.xsd"/>
+</catalog>
+
+
+
+
+
+
+
+
+
+
+

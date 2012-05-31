@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.SolCre" table="SOL_CRE">
+    <id name="solCreId" type="big_decimal">
+      <column name="SOL_CRE_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="calId" type="big_decimal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </property>
+    <property name="solCreDes" type="string">
+      <column length="100" name="SOL_CRE_DES"/>
+    </property>
+    <property name="solCreLimInf" type="java.lang.Double">
+      <column name="SOL_CRE_LIM_INF" precision="126" scale="0"/>
+    </property>
+    <property name="solCreLimSup" type="java.lang.Double">
+      <column name="SOL_CRE_LIM_SUP" precision="126" scale="0"/>
+    </property>
+    <property name="solCreOrdPre" type="big_decimal">
+      <column name="SOL_CRE_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="solCrePto" type="java.lang.Double">
+      <column name="SOL_CRE_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="solCreWoe" type="java.lang.Double">
+      <column name="SOL_CRE_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="solCreDesLar" type="string">
+      <column length="200" name="SOL_CRE_DES_LAR"/>
+    </property>
+    <set inverse="true" name="cliGols">
+      <key>
+        <column name="SOL_CRE_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliGol"/>
+    </set>
+  </class>
+</hibernate-mapping>

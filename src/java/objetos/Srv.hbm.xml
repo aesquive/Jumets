@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.Srv" table="SRV">
+    <id name="srvId" type="big_decimal">
+      <column name="SRV_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="calId" type="big_decimal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </property>
+    <property name="srvDes" type="string">
+      <column length="100" name="SRV_DES"/>
+    </property>
+    <property name="srvLimInf" type="java.lang.Double">
+      <column name="SRV_LIM_INF" precision="126" scale="0"/>
+    </property>
+    <property name="srvLimSup" type="java.lang.Double">
+      <column name="SRV_LIM_SUP" precision="126" scale="0"/>
+    </property>
+    <property name="srvOrdPre" type="big_decimal">
+      <column name="SRV_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="srvPto" type="java.lang.Double">
+      <column name="SRV_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="srvWoe" type="java.lang.Double">
+      <column name="SRV_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="srvDesLar" type="string">
+      <column length="200" name="SRV_DES_LAR"/>
+    </property>
+    <property name="tipEmpId" type="int">
+      <column length="200" name="TIP_EMP_ID"/>
+    </property>
+    <set inverse="true" name="cliGols">
+      <key>
+        <column name="SRV_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliGol"/>
+    </set>
+  </class>
+</hibernate-mapping>

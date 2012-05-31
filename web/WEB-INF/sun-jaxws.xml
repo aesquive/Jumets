@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints version="2.0" xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
+  <endpoint implementation="webservice.CalculadoraNEWS" name="CalculadoraNEWS" url-pattern="/CalculadoraNEWS"/>
+  <endpoint implementation="webservice.CalculadoraCGWS" name="CalculadoraCGWS" url-pattern="/CalculadoraCGWS"/>
+  <endpoint implementation="webservice.CalculadoraCMWS" name="CalculadoraCMWS" url-pattern="/CalculadoraCMWS"/>
+  <endpoint implementation="webservice.CalculadoraPPWS" name="CalculadoraPPWS" url-pattern="/CalculadoraPPWS"/>
+  <endpoint implementation="com.urbi.gol.GolWs" name="GolWs" url-pattern="/GolWs"/>
+  <endpoint implementation="webservice.CalculadoraBWS" name="CalculadoraBWS" url-pattern="/CalculadoraBWS"/>
+</endpoints>

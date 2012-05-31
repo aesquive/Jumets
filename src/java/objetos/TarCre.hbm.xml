@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.TarCre" table="TAR_CRE">
+    <id name="tarCreId" type="big_decimal">
+      <column name="TAR_CRE_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="calId" type="big_decimal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </property>
+    <property name="tarCreDes" type="string">
+      <column length="100" name="TAR_CRE_DES"/>
+    </property>
+    <property name="tarCreLimInf" type="java.lang.Double">
+      <column name="TAR_CRE_LIM_INF" precision="126" scale="0"/>
+    </property>
+    <property name="tarCreLimSup" type="java.lang.Double">
+      <column name="TAR_CRE_LIM_SUP" precision="126" scale="0"/>
+    </property>
+    <property name="tarCreOrdPre" type="big_decimal">
+      <column name="TAR_CRE_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="tarCrePto" type="java.lang.Double">
+      <column name="TAR_CRE_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="tarCreWoe" type="java.lang.Double">
+      <column name="TAR_CRE_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="tarCreDesLar" type="string">
+      <column length="200" name="TAR_CRE_DES_LAR"/>
+    </property>
+  </class>
+</hibernate-mapping>

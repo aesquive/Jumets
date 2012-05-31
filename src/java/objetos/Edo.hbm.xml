@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.Edo" table="EDO">
+    <id name="edoId" type="big_decimal">
+      <column name="EDO_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="objetos.Cal" fetch="select" name="cal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="edoDes" type="string">
+      <column length="100" name="EDO_DES"/>
+    </property>
+    <property name="edoOrdPre" type="big_decimal">
+      <column name="EDO_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="edoWoe" type="java.lang.Double">
+      <column name="EDO_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="edoDesLar" type="string">
+      <column length="200" name="EDO_DES_LAR"/>
+    </property>
+    <property name="edoRcg" type="java.lang.Double">
+      <column name="EDO_RCG" precision="126" scale="0"/>
+    </property>
+    <set inverse="true" name="codPoses">
+      <key>
+        <column name="EDO_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CodPos"/>
+    </set>
+    <set inverse="true" name="cliBhrs">
+      <key>
+        <column name="EDO_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliBhr"/>
+    </set>
+    <set inverse="true" name="deses">
+      <key>
+        <column name="EDO_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.Des"/>
+    </set>
+    <set inverse="true" name="cliMtas">
+      <key>
+        <column name="EDO_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliMta"/>
+    </set>
+  </class>
+</hibernate-mapping>

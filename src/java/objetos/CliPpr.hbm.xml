@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.CliPpr" table="CLI_PPR">
+    <id name="cliMtaId" type="big_decimal">
+      <column name="CLI_MTA_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="objetos.Cli" fetch="select" name="cli">
+      <column name="CLI_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.IntPi" fetch="select" name="intPi">
+      <column name="INT_PPR_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.FtrPpr" fetch="select" name="ftrPpr">
+      <column name="FTR_PPR_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="calId" type="big_decimal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </property>
+    <property name="cliFecNac" type="date">
+      <column length="7" name="CLI_FEC_NAC"/>
+    </property>
+    <property name="cliEdaId" type="big_decimal">
+      <column name="CLI_EDA_ID" precision="22" scale="0"/>
+    </property>
+    <property name="codPosId" type="string">
+      <column length="5" name="COD_POS_ID"/>
+    </property>
+    <property name="ocpId" type="big_decimal">
+      <column name="OCP_ID" precision="22" scale="0"/>
+    </property>
+    <property name="edoId" type="big_decimal">
+      <column name="EDO_ID" precision="22" scale="0"/>
+    </property>
+    <property name="cliPprMes" type="string">
+      <column length="25" name="CLI_PPR_MES"/>
+    </property>
+  </class>
+</hibernate-mapping>

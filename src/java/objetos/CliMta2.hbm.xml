@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.CliMta2" table="CLI_MTA2">
+    <id name="cliMta2Id" type="int">
+      <column name="CLI_MTA2_ID" precision="22" scale="0"/>
+      <generator class="increment"/>
+    </id>
+    <many-to-one class="objetos.Cli" fetch="select" name="cli">
+      <column name="CLI_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="nivEstId" type="int">
+      <column name="NIV_EST_ID" precision="22" scale="0"/>
+    </property>
+    <property name="dinExtId" type="int">
+      <column name="DIN_EXT_ID" precision="22" scale="0"/>
+    </property>
+    <!--property name="calId" type="int">
+            <column name="CAL_ID" precision="22" scale="0" />
+        </property-->
+    <property name="proAnoGtoId" type="int">
+      <column name="PRO_ANO_GTO_ID" precision="22" scale="0"/>
+    </property>
+    <property name="banPorUsoId" type="int">
+      <column name="BAR_POR_USO_ID" precision="22" scale="0"/>
+    </property>
+    <property name="burUsoId" type="int">
+      <column name="BURO_USO_ID" precision="22" scale="0"/>
+    </property>
+    <property name="depEcoId" type="int">
+      <column name="DEP_ECO_ID" precision="22" scale="0"/>
+    </property>
+    <property name="migId" type="int">
+      <column name="MIG_ID" precision="22" scale="0"/>
+    </property>
+    <property name="edoId" type="int">
+      <column name="EDO_ID" precision="22" scale="0"/>
+    </property>
+    <property name="tipResId" type="int">
+      <column name="TIP_RES_ID" precision="22" scale="0"/>
+    </property>
+    <property name="opnBarId" type="int">
+      <column name="OPN_BAR_ID" precision="22" scale="0"/>
+    </property>
+    <property name="rolId" type="int">
+      <column name="ROL_ID" precision="22" scale="0"/>
+    </property>
+    <property name="relId" type="int">
+      <column name="REL_ID" precision="22" scale="0"/>
+    </property>
+    <property name="edaId" type="int">
+      <column name="CLI_EDA_ID" precision="22" scale="0"/>
+    </property>
+    <property name="burActId" type="int">
+      <column name="BUR_ACT_ID" precision="22" scale="0"/>
+    </property>
+    <property name="ocpId" type="int">
+      <column name="OCP_ID" precision="22" scale="0"/>
+    </property>
+    <property name="tipEmpId" type="int">
+      <column name="TIP_EMP_ID" precision="22" scale="0"/>
+    </property>
+    <property name="burHisId" type="int">
+      <column name="BUR_HIS_ID" precision="22" scale="0"/>
+    </property>
+    <property name="ptmId" type="int">
+      <column name="PTM_ID" precision="22" scale="0"/>
+    </property>
+    <property name="burAntId" type="int">
+      <column name="BUR_ANT_ID" precision="22" scale="0"/>
+    </property>
+    <property name="parPltId" type="int">
+      <column name="PAR_PLT_ID" precision="22" scale="0"/>
+    </property>
+    <property name="burPagId" type="int">
+      <column name="BUR_PAG_ID" precision="22" scale="0"/>
+    </property>
+    <!--property name="gpoId" type="int">
+            <column name="GPO_ID" precision="22" scale="0" />
+        </property-->
+    <property name="rldId" type="int">
+      <column name="RLD_ID" precision="22" scale="0"/>
+    </property>
+    <property name="asoParId" type="int">
+      <column name="ASO_PAR_ID" precision="22" scale="0"/>
+    </property>
+    <property name="actExtId" type="int">
+      <column name="ACT_EXT_ID" precision="22" scale="0"/>
+    </property>
+    <property name="edoCvlId" type="int">
+      <column name="EDO_CVL_ID" precision="22" scale="0"/>
+    </property>
+    <property name="ingId" type="int">
+      <column name="ING_ID" precision="22" scale="0"/>
+    </property>
+    <property name="banPorPagId" type="int">
+      <column name="BAN_POR_PAG_ID" precision="22" scale="0"/>
+    </property>
+    <property name="sexId" type="int">
+      <column name="SEX_ID" precision="22" scale="0"/>
+    </property>
+    <property name="cliFecNac" type="date">
+      <column length="7" name="CLI_FEC_NAC"/>
+    </property>
+    <property name="codPosId" type="string">
+      <column length="5" name="COD_POS_ID"/>
+    </property>
+    <property name="cliAntRes" type="java.lang.Double">
+      <column name="CLI_ANT_RES" precision="126" scale="0"/>
+    </property>
+    <property name="cliAntEmp" type="java.lang.Double">
+      <column name="CLI_ANT_EMP" precision="126" scale="0"/>
+    </property>
+    <property name="banCmpId" type="int">
+      <column name="BAN_CMP_ID" precision="22" scale="0"/>
+    </property>
+    <property name="cliIndTarCre" type="boolean">
+      <column length="1" name="CLI_IND_TAR_CRE"/>
+    </property>
+    <property name="cliIndBurCre" type="boolean">
+      <column length="1" name="CLI_IND_BUR_CRE"/>
+    </property>
+    <property name="cliDesOcu" type="string">
+      <column length="100" name="CLI_DES_OCU"/>
+    </property>
+    <property name="cliIngMen" type="int">
+      <column name="CLI_ING_MEN" precision="22" scale="0"/>
+    </property>
+    <property name="desId" type="int">
+      <column name="DES_ID" precision="22" scale="0"/>
+    </property>
+    <property name="cliValViv" type="int">
+      <column name="CLI_VAL_VIV" precision="22" scale="0"/>
+    </property>
+    <property name="cliValMen" type="int">
+      <column name="CLI_VAL_MEN" precision="22" scale="0"/>
+    </property>
+  </class>
+</hibernate-mapping>

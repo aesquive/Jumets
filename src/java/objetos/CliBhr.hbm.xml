@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.CliBhr" table="CLI_BHR">
+    <id name="cliBhrId" type="big_decimal">
+      <column name="CLI_BHR_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="objetos.BhrIngViv" fetch="select" name="bhrIngViv">
+      <column name="BHR_ING_VIV_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.BhrMenIng" fetch="select" name="bhrMenIng">
+      <column name="BHR_MEN_ING" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.Ocp" fetch="select" name="ocp">
+      <column name="OCP_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.Eda" fetch="select" name="eda">
+      <column name="EDA_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.BhrAct" fetch="select" name="bhrAct">
+      <column name="BHR_ACT_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.Edo" fetch="select" name="edo">
+      <column name="EDO_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.BhrEfi" fetch="select" name="bhrEfi">
+      <column name="BHR_EFI_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.BhrCtaPurRie" fetch="select" name="bhrCtaPurRie">
+      <column name="BHR_CTA_PUR_RIE_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <many-to-one class="objetos.BhrPagPtlCnt" fetch="select" name="bhrPagPtlCnt">
+      <column name="BHR_PAG_PTL_CNT" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="ciId" type="big_decimal">
+      <column name="CI_ID" precision="22" scale="0"/>
+    </property>
+    <property name="ftrPprId" type="big_decimal">
+      <column name="FTR_PPR_ID" precision="22" scale="0"/>
+    </property>
+    <property name="intPiId" type="big_decimal">
+      <column name="INT_PI_ID" precision="22" scale="0"/>
+    </property>
+    <set inverse="true" name="pagCliBhrs">
+      <key>
+        <column name="CLI_BHR_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.PagCliBhr"/>
+    </set>
+  </class>
+</hibernate-mapping>

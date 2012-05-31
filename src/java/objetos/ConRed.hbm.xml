@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.ConRed" table="CON_RED">
+    <id name="conRedId" type="big_decimal">
+      <column name="CON_RED_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="objetos.Cal" fetch="select" name="cal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="conRedDes" type="string">
+      <column length="100" name="CON_RED_DES"/>
+    </property>
+    <property name="conRedLimInf" type="java.lang.Double">
+      <column name="CON_RED_LIM_INF" precision="126" scale="0"/>
+    </property>
+    <property name="conRedLimSup" type="java.lang.Double">
+      <column name="CON_RED_LIM_SUP" precision="126" scale="0"/>
+    </property>
+    <property name="conRedOrdPre" type="big_decimal">
+      <column name="CON_RED_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="conRedPto" type="java.lang.Double">
+      <column name="CON_RED_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="conRedWoe" type="java.lang.Double">
+      <column name="CON_RED_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="conRedDesLar" type="string">
+      <column length="200" name="CON_RED_DES_LAR"/>
+    </property>
+  </class>
+</hibernate-mapping>

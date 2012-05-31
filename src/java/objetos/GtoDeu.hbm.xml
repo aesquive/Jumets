@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.GtoDeu" table="GTO_DEU">
+    <id name="gtoDeuId" type="big_decimal">
+      <column name="GTO_DEU_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="objetos.Cal" fetch="select" name="cal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="gtoDeuDes" type="string">
+      <column length="100" name="GTO_DEU_DES"/>
+    </property>
+    <property name="gtoDeuLimInf" type="java.lang.Double">
+      <column name="GTO_DEU_LIM_INF" precision="126" scale="0"/>
+    </property>
+    <property name="gtoDeuLimSup" type="java.lang.Double">
+      <column name="GTO_DEU_LIM_SUP" precision="126" scale="0"/>
+    </property>
+    <property name="gtoDeuOrdPre" type="big_decimal">
+      <column name="GTO_DEU_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="gtoDeuPto" type="java.lang.Double">
+      <column name="GTO_DEU_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="gtoDeuWoe" type="java.lang.Double">
+      <column name="GTO_DEU_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="gtoDeuDesLar" type="string">
+      <column length="200" name="GTO_DEU_DES_LAR"/>
+    </property>
+    <set inverse="true" name="cliGolsForGtoDeuHId">
+      <key>
+        <column name="GTO_DEU_H_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliGol"/>
+    </set>
+    <set inverse="true" name="cliGolsForGtoDeuId">
+      <key>
+        <column name="GTO_DEU_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliGol"/>
+    </set>
+  </class>
+</hibernate-mapping>

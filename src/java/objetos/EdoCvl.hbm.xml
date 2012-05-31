@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.EdoCvl" table="EDO_CVL">
+    <id name="edoCvlId" type="big_decimal">
+      <column name="EDO_CVL_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="objetos.Cal" fetch="select" name="cal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="edoCvlDes" type="string">
+      <column length="100" name="EDO_CVL_DES"/>
+    </property>
+    <property name="edoCvlLimInf" type="java.lang.Double">
+      <column name="EDO_CVL_LIM_INF" precision="126" scale="0"/>
+    </property>
+    <property name="edoCvlLimSup" type="java.lang.Double">
+      <column name="EDO_CVL_LIM_SUP" precision="126" scale="0"/>
+    </property>
+    <property name="edoCvlOrdPre" type="big_decimal">
+      <column name="EDO_CVL_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="edoCvlPto" type="java.lang.Double">
+      <column name="EDO_CVL_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="edoCvlWoe" type="java.lang.Double">
+      <column name="EDO_CVL_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="edoCvlDesLar" type="string">
+      <column length="200" name="EDO_CVL_DES_LAR"/>
+    </property>
+    <set inverse="true" name="cliMtas">
+      <key>
+        <column name="EDO_CVL_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliMta"/>
+    </set>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.Mig" table="MIG">
+    <id name="migId" type="big_decimal">
+      <column name="MIG_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="objetos.Cal" fetch="select" name="cal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="migDes" type="string">
+      <column length="100" name="MIG_DES"/>
+    </property>
+    <property name="migLimInf" type="java.lang.Double">
+      <column name="MIG_LIM_INF" precision="126" scale="0"/>
+    </property>
+    <property name="migLimSup" type="java.lang.Double">
+      <column name="MIG_LIM_SUP" precision="126" scale="0"/>
+    </property>
+    <property name="migOrdPre" type="big_decimal">
+      <column name="MIG_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="migPto" type="java.lang.Double">
+      <column name="MIG_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="migWoe" type="java.lang.Double">
+      <column name="MIG_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="migDesLar" type="string">
+      <column length="200" name="MIG_DES_LAR"/>
+    </property>
+    <set inverse="true" name="cliMtas">
+      <key>
+        <column name="MIG_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliMta"/>
+    </set>
+  </class>
+</hibernate-mapping>

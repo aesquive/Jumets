@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/04/2010 01:02:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="objetos.VcsViv" table="VCS_VIV">
+    <id name="vcsVivId" type="big_decimal">
+      <column name="VCS_VIV_ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="calId" type="big_decimal">
+      <column name="CAL_ID" precision="22" scale="0"/>
+    </property>
+    <property name="vcsVivDes" type="string">
+      <column length="100" name="VCS_VIV_DES"/>
+    </property>
+    <property name="vcsVivLimInf" type="java.lang.Double">
+      <column name="VCS_VIV_LIM_INF" precision="126" scale="0"/>
+    </property>
+    <property name="vcsVivLimSup" type="java.lang.Double">
+      <column name="VCS_VIV_LIM_SUP" precision="126" scale="0"/>
+    </property>
+    <property name="vcsVivOrdPre" type="big_decimal">
+      <column name="VCS_VIV_ORD_PRE" precision="22" scale="0"/>
+    </property>
+    <property name="vcsVivPto" type="java.lang.Double">
+      <column name="VCS_VIV_PTO" precision="126" scale="0"/>
+    </property>
+    <property name="vcsVivWoe" type="java.lang.Double">
+      <column name="VCS_VIV_WOE" precision="126" scale="0"/>
+    </property>
+    <property name="vcsVivDesLar" type="string">
+      <column length="200" name="VCS_VIV_DES_LAR"/>
+    </property>
+    <set inverse="true" name="cliGols">
+      <key>
+        <column name="VCS_VIV_ID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="objetos.CliGol"/>
+    </set>
+  </class>
+</hibernate-mapping>
