@@ -16,6 +16,7 @@
 		}
 	}
         int tipoPerfil=Integer.parseInt(usuarioUrbi.getPerfil());
+        String direccionNuevoGol="http://localhost:8084/NuevoGol/index.jsp?id="+usuarioUrbi.getId();
 %>
 
     
@@ -63,7 +64,7 @@ a:active {
   <tr>
     <td width="110"  height="60"><div align="center"><a href="meta/metaindex.jsp" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('cliente','','images/activo_cliente.png',1)"><img src="images/inactivo_cliente.png" name="cliente" width="59" height="60" border="0" id="cliente" /></a></div></td>
     <td width="110"><div align="center"><a href="gol/golindex.jsp" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('meta','','images/activo_meta.png',1)"><img src="images/inactivo_meta.png" name="meta" width="58" height="60" border="0" id="meta" /></a></div></td>
-    <td width="110"><div align="center"><a href="http://50.112.124.249:8080/NuevoGol" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('infonavit','','images/inactivo_infonavit.png',1)"><img src="images/inactivo_infonavit.png" name="info" width="58" height="60" border="0" id="info" /></a></div></td>
+    <td width="110"><div align="center"><a href="<%=direccionNuevoGol%>" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('infonavit','','images/inactivo_infonavit.png',1)"><img src="images/inactivo_infonavit.png" name="info" width="58" height="60" border="0" id="info" /></a></div></td>
     <%
     if(tipoPerfil==1){
     %>
@@ -79,7 +80,7 @@ a:active {
   <tr height="35">
     <td width="110"><div align="center" class="blueText"><a href="meta/metaindex.jsp" class="blueText">Cliente<br />Meta</a></p></div></td>
     <td width="110"><div align="center"><p class="blueText"><a href="gol/golindex.jsp" class="blueText">Cliente<br />Gol</a> </p></div></td>
-    <td width="110"><div align="center"><p class="blueText"><a href="http://50.112.124.249:8080/NuevoGol" class="blueText">Infonavit<br />Gol</a> </p></div></td>
+    <td width="110"><div align="center"><p class="blueText"><a href="<%=direccionNuevoGol%>" class="blueText">Infonavit<br />Gol</a> </p></div></td>
     <%
     if(tipoPerfil==1){
     %>
