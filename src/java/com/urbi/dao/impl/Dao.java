@@ -1,6 +1,7 @@
 package com.urbi.dao.impl;
 
 
+import com.sun.msv.reader.trex.ng.RestrictionChecker;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -8,8 +9,10 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import objetos.HibernateUtil;
+import objetos.Usu;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
 
 
 
@@ -30,7 +33,8 @@ public class Dao {
 
     public static void main(String[] args) {
         Dao dao=new Dao();
-        dao.get("CliGol");
+        Usu usu = dao.getUsu("admin","admin");
+        System.out.println(usu.getUsuId());
     }
 
     public List get(String tabla, String where){
@@ -202,6 +206,14 @@ public class Dao {
 
 
         return null;
+    }
+
+    public Usu getUsu(String user, String pass) {
+        List list = sesion.createCriteria(Usu.class).add(Restrictions.eq("usuClave", user)).add(Restrictions.eq("usuPassword", pass)).list();
+        if(list.isEmpty()){
+            return null;
+        }
+        return (Usu) list.get(0);
     }
 
 

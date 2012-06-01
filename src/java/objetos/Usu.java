@@ -19,6 +19,9 @@ public class Usu  implements java.io.Serializable {
      private Double usuPto;
      private Double usuWoe;
      private String usuDesLar;
+     private String usuClave;
+     private String usuPassword;
+     private String usuPerfil;
 
     public Usu() {
     }
@@ -27,17 +30,25 @@ public class Usu  implements java.io.Serializable {
     public Usu(BigDecimal usuId) {
         this.usuId = usuId;
     }
-    public Usu(BigDecimal usuId, BigDecimal calId, String usuDes, Double usuLimInf, Double usuLimSup, BigDecimal usuOrdPre, Double usuPto, Double usuWoe, String usuDesLar) {
-       this.usuId = usuId;
-       this.calId = calId;
-       this.usuDes = usuDes;
-       this.usuLimInf = usuLimInf;
-       this.usuLimSup = usuLimSup;
-       this.usuOrdPre = usuOrdPre;
-       this.usuPto = usuPto;
-       this.usuWoe = usuWoe;
-       this.usuDesLar = usuDesLar;
+
+    public Usu(BigDecimal usuId, BigDecimal calId, String usuDes, Double usuLimInf, Double usuLimSup, BigDecimal usuOrdPre, Double usuPto, Double usuWoe, String usuDesLar, String usuClave, String usuPassword, String usuPerfil) {
+        this.usuId = usuId;
+        this.calId = calId;
+        this.usuDes = usuDes;
+        this.usuLimInf = usuLimInf;
+        this.usuLimSup = usuLimSup;
+        this.usuOrdPre = usuOrdPre;
+        this.usuPto = usuPto;
+        this.usuWoe = usuWoe;
+        this.usuDesLar = usuDesLar;
+        this.usuClave = usuClave;
+        this.usuPassword = usuPassword;
+        this.usuPerfil = usuPerfil;
     }
+
+   
+    
+    
    
     public BigDecimal getUsuId() {
         return this.usuId;
@@ -103,6 +114,44 @@ public class Usu  implements java.io.Serializable {
         this.usuDesLar = usuDesLar;
     }
 
+    /**
+     * @return the usuClave
+     */
+    public String getUsuClave() {
+        return usuClave;
+    }
+
+    /**
+     * @param usuClave the usuClave to set
+     */
+    public void setUsuClave(String usuClave) {
+        this.usuClave = usuClave;
+    }
+
+    /**
+     * @return the usuPassword
+     */
+    public String getUsuPassword() {
+        return usuPassword;
+    }
+    
+    public void setUsuPassword(String password){
+        this.usuPassword=password;
+    }
+
+    /**
+     * @return the usuPerfil
+     */
+    public String getUsuPerfil() {
+        return usuPerfil;
+    }
+
+    /**
+     * @param usuPerfil the usuPerfil to set
+     */
+    public void setUsuPerfil(String usuPerfil) {
+        this.usuPerfil = usuPerfil;
+    }
 
 
 

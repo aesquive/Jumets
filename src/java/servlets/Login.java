@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import com.urbi.utilerias.dao.Usuarios;
 import com.urbi.utilerias.dao.UsuariosImpl;
+import objetos.Usu;
 
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -30,9 +31,9 @@ public class Login extends HttpServlet {
 			String user = request.getParameter("user");
 			String pass = request.getParameter("pass");
 
-			int login = UsuariosImpl.autentificacion(user, pass);
-			if (login == 1) {
-				Usuarios usuarioUrbi = UsuariosImpl.usuarioUrbi(user);
+			Usu usu = UsuariosImpl.autentificacion(user, pass);
+                        if (usu!=null) {
+				Usuarios usuarioUrbi = UsuariosImpl.usuarioUrbi(usu);
 				session.setAttribute("usuarioUrbi", usuarioUrbi);
 				session.setAttribute("msjLogin", null);
 				response.sendRedirect("index_autent.jsp");

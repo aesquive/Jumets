@@ -31,5 +31,15 @@
     <property name="usuDesLar" type="string">
       <column length="200" name="USU_DES_LAR"/>
     </property>
+    <property name="usuClave" type="string">
+      <column length="200" name="USU_CLAVE"/>
+    </property>
+    <property name="usuPassword" type="string">
+      <column length="200" name="USU_PASSWORD"/>
+    </property>
+    <property name="usuPerfil" type="string">
+      <column length="200" name="USU_PERFIL"/>
+    </property>
+    
   </class>
 </hibernate-mapping>
