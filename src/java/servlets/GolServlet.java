@@ -6,21 +6,21 @@
 package servlets;
 
 
+import arbitreadores.objetos.ArbGolAu;
+import arbitreadores.verificador.VerificadorArbitrajeGol;
 import com.urbi.prima.PrimaBean;
 import com.urbi.prima.PrimaSql;
-
+import com.urbi.utilerias.dao.Usuarios;
 import gol.beans.GolBean;
 import gol.beans.GolSql;
 import gol.beans.GolWs;
-
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 /**
@@ -156,7 +156,8 @@ public class GolServlet extends HttpServlet {
 				if (gol.getBuroCredito() == 1) {// SI
 					GolSql.insertaBuro(gol, idPrima);
 				}
-
+                                String clave=p.getApellidoPaterno().substring(0,1)+p.getApellidoMaterno().substring(0, 1)+p.getNombre().substring(0, 1)+p.getDia()+p.getMes()+p.getAnio();
+                                guardarArbitraje(idPrima , ((Usuarios)request.getSession().getAttribute("usuarioUrbi")).getId(),clave);
 				request.getSession().setAttribute("gol", null);
 				response.sendRedirect("./gol/golindex.jsp");
 			} else if (command.equalsIgnoreCase("buscar")) {
@@ -595,5 +596,11 @@ public class GolServlet extends HttpServlet {
             Reportador r = new Reportador();
             r.calculaTodos();
         }
+
+    private void guardarArbitraje(int idPrima, String idUsu, String clave) {
+        ArbGolAu arb=new ArbGolAu(Integer.parseInt(idUsu), idPrima, clave.toUpperCase(), Calendar.getInstance().getTime());
+        VerificadorArbitrajeGol verificador=new VerificadorArbitrajeGol(arb);
+        verificador.guardarVerificar();
+    }
 
 }
