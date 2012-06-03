@@ -16,6 +16,7 @@ function CreateXmlHttpObj() {
 		XmlHttpObj = new XMLHttpRequest();
 	}
 }
+
 function cargaCP() {
 	var cp = document.getElementById("cp").value;
 	if (cp.length < 5)
@@ -93,7 +94,6 @@ function cargaXml(localidadNode) {
 	var archivadoLista = XmlHttpObj.responseXML
 			.getElementsByTagName("catalogo")[0];
 	var nodo = archivadoLista.getElementsByTagName('gol');
-
 	if (tipoGlobal != 3) {
 		var textValue;
 		var optionItem;
@@ -106,8 +106,8 @@ function cargaXml(localidadNode) {
 		optionItem = new Option("-Seleccione-", "-1", false, false);
 		listaSubfondo.options[listaSubfondo.length] = optionItem;
 		for ( var y = 0; y < nodo.length; y++) {
-			var id = nodo(y).getAttribute("id");
-			var nombre = nodo(y).text;
+			var id = nodo[y].getAttribute("id");
+			var nombre = nodo[y].getAttribute("mun");
 
 			var select = false;
 			if (id == globalSelected)
@@ -123,9 +123,9 @@ function cargaXml(localidadNode) {
 			document.getElementById(campoModificar).disabled = false;
 	} else {
 		for ( var y = 0; y < nodo.length; y++) {
-			var id = nodo(y).getAttribute("id");
-			var nombre = nodo(y).text;
-			document.getElementById("edo").value = id;
+			var id = nodo[y].getAttribute("id");
+			var nombre = nodo[y].getAttribute("mun");
+                	document.getElementById("edo").value = id;
 			document.getElementById("mun").value = nombre;
 			document.getElementById("sexo").focus();
 		}

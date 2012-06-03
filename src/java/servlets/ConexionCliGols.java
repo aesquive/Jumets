@@ -28,7 +28,7 @@ public class ConexionCliGols {
     // load the Oracle JDBC Driver
     Class.forName("com.mysql.jdbc.Driver");
     // define database connection parameters
-    return DriverManager.getConnection ("jdbc:mysql://localhost:3306/quants_gol_18062011","root", "lala");
+    return DriverManager.getConnection ("jdbc:mysql://localhost:3306/meta","root", "lala");
   }
 
 

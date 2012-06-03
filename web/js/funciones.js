@@ -127,8 +127,9 @@ function calcular_edad() {
 	if (dia == -1) {
 		return false;
 	}
-	edad = hoy.getYear() - ano - 1;
-
+	edad = hoy.getFullYear() - ano - 1;
+        document.getElementById("edad").value = edad;
+        return;
 	if (hoy.getMonth() + 1 - mes < 0) {
 		if (edad < 18) {
 			document.getElementById("edad").value = "";

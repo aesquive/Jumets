@@ -78,7 +78,7 @@ var UtileriasUrbi = {
 	strIDCP:null,
 	
 	cargarCodigoPostal:function(strIDCP){
-		
+	alert("entro");	
 	UtileriasUrbi.strIDCP = 	strIDCP;
 	
 	//alert(UtileriasUrbi.strIDCP)
@@ -88,7 +88,7 @@ var UtileriasUrbi = {
 		return false;
 	tipoGlobal = 3;
 	var requestUrl;
-	requestUrl = "../PrimaAjax?idCal=" + cp + "&tipo=3";
+	requestUrl = "../GolAjax?idCal=" + cp + "&tipo=3";
 	// Crea el objeto XMLHTTP
 	UtileriasUrbi.CreateXmlHttpObj();
 	if (UtileriasUrbi.XmlHttpObj) {
@@ -120,8 +120,8 @@ var UtileriasUrbi = {
 	
 	 
 			for ( var y = 0; y < nodo.length; y++) {
-			var id = nodo(y).getAttribute("id");
-			var nombre = nodo(y).text;
+			var id = nodo[y].getAttribute("id");
+			var nombre = nodo[y].getAttribute("mun");
 			
  
 			UtileriasUrbi.definirEstadoInicialContenedorTablaError(false);

@@ -24,6 +24,7 @@ public class GolAjax extends HttpServlet {
 		// TODO Auto-generated constructor stub
 	}
 
+    @Override
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		String[][] dato = new String[0][0];
@@ -32,6 +33,9 @@ public class GolAjax extends HttpServlet {
 		String id1 = request.getParameter("id1");
 		String id2 = request.getParameter("id2");
 
+                System.out.println("entre a gol ajax");
+                System.out.println("el tipo es "+tipo);
+                
 		if ("1".equals(tipo))// sector
 			dato = PrimaSql.getSector(idCal, "", id1);
 		else if ("2".equals(tipo))// subsector
@@ -42,16 +46,21 @@ public class GolAjax extends HttpServlet {
 		response.setContentType("text/xml");
 		PrintWriter pw = response.getWriter();
 		pw.write("<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>");
-		pw.write("\n<catalogo>\n");
+		
+                pw.write("\n<catalogo>\n");
 		for (int i = 0; i < dato.length; i++) {
-			pw.write("\t<gol id=\"" + dato[i][0] + "\">" + dato[i][1]
+			pw.write("\t<gol id=\"" + dato[i][0] + "\"    mun=\""+dato[i][1]+"\">" + dato[i][1]
 					+ "</gol>\n");
-		}
+                        System.out.println("\t<gol id=\"" + dato[i][0] + "\">" + dato[i][1]
+					+ "</gol>\n");
+                }
 		pw.write("</catalogo>\n");
+                
 		pw.flush();
 		pw.close();
 	}
 
+    @Override
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);

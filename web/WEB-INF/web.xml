@@ -11,12 +11,12 @@
     <context-param>
         <description/>
         <param-name>userBD</param-name>
-        <param-value>canek</param-value>
+        <param-value>root</param-value>
     </context-param>
     <context-param>
         <description/>
         <param-name>passwordBD</param-name>
-        <param-value>CanekQuants</param-value>
+        <param-value>root</param-value>
     </context-param>
     <context-param>
         <description/>
@@ -26,7 +26,7 @@
     <context-param>
         <description/>
         <param-name>NameBD</param-name>
-        <param-value>gol</param-value>
+        <param-value>meta</param-value>
     </context-param>
     <context-param>
         <description/>
@@ -36,12 +36,12 @@
     <context-param>
         <description/>
         <param-name>ServerDB</param-name>
-        <param-value>75.101.135.76</param-value>
+        <param-value>localhost</param-value>
     </context-param>
     <context-param>
         <description>Parametro Para conexion</description>
         <param-name>NombreServidorBD</param-name>
-        <param-value>75.101.135.76</param-value>
+        <param-value>localhost</param-value>
     </context-param>
     <listener>
         <listener-class>com.urbi.listener.Listener</listener-class>

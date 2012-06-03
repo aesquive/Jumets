@@ -16,7 +16,7 @@
 		}
 	}
         int tipoPerfil=Integer.parseInt(usuarioUrbi.getPerfil());
-        String direccionNuevoGol="http://localhost:8084/NuevoGol/gol/golindex.html?id="+usuarioUrbi.getId();
+        String direccionNuevoGol="http://50.112.124.249:8080/NuevoGol/gol/golindex.html?id="+usuarioUrbi.getId();
 %>
 
     
