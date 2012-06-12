@@ -1,3 +1,5 @@
+<%@page import="org.hibernate.criterion.Restrictions"%>
+<%@page import="com.urbi.dao.impl.Dao"%>
 <!--Archivo modificado por josue-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -23,7 +25,10 @@
         <%@page import="com.urbi.util.HibernateUtil2" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <%
-            String accion = (String) request.getSession().getAttribute("accion");
+           
+        String estado="";
+        String municipio="";
+               String accion = (String) request.getSession().getAttribute("accion");
             request.getSession().removeAttribute("accion");
             int id = 0;
             Cli cli = null;
@@ -68,7 +73,10 @@
                     if (request.getSession().getAttribute("clienteMetaOld") != null) {
                         request.getSession().removeAttribute("clienteMetaOld");
                     }
-
+                    Dao dao=new Dao();
+                    CodPos cod=(CodPos)dao.getCriteria(CodPos.class,Restrictions.eq("codPosId", cliMta.getCodPosId()));
+                    estado=cod.getEdo().getEdoDes();
+                    municipio=cod.getCodPosNomMun();
                     request.getSession().setAttribute("clienteMetaOld", cliMta);
                 }
                 //edo = (Edo) ses.createQuery("from Edo e where e.edoId=" + cliMta.getEdoId()).uniqueResult();
@@ -88,11 +96,23 @@
         <link href="../css/main2.css" rel="stylesheet" type="text/css" />
         <link href="../css/textos.css" rel="stylesheet" type="text/css" /><br />
         <link href="../js/funciones.js"  type="text/javascript" />
-        <script type="javascript" language="javascript" src="<%=request.getContextPath()%>/js/funciones.js"></script>
 
         <script type="text/javascript" language="javascript">
-            var tipoGlobal;
 
+
+
+            var tipoGlobal;
+            function AceptaAlfanumericoYPunto() {
+                var flag;
+                if ((event.keyCode >= 65 && event.keyCode <= 90)
+                    || (event.keyCode >= 97 && event.keyCode <= 122))
+                    event.returnValue = true;
+                else if ((event.keyCode == 46 || event.keyCode == 32) && !flag) {
+                    flag = true;
+                    event.returnValue = true;
+                } else
+                    event.returnValue = false;
+            }
             
             function cargaCP() {
                 var cp = document.getElementById("codigoPostal").value;
@@ -198,7 +218,7 @@
 
             function   superGeneracionRfc(dia,mes,anio,nombre,aPaterno,aMaterno){
 
-                var vocales=['A','E','I','O','U'];
+                var vocales=['A','E','I','O','U',"a","e","i","o","u"];
 
 
 
@@ -441,7 +461,7 @@
 
         if (cli != null) {
     %>
-    <body onload="ClienteMeta.init(); disableForm(<%=activar%>); UtileriasUrbi.cargarCodigoPostal('codigoPostal'); UtileriasUrbi.validarDigitosCodigoPostal('codigoPostal')">
+    <body onload="ClienteMeta.init(); disableForm(<%=activar%>);  UtileriasUrbi.validarDigitosCodigoPostal('codigoPostal')">
 
         <%} else {%>
         <body onload="ClienteMeta.init(); disableForm(<%=activar%>);">
@@ -580,7 +600,7 @@
                                                                         <%
                                                                             if (cli != null) {
                                                                         %>
-                                                                        <td class="blackText1" align="left"><input type="text" name="apellidoPaterno" id ="apellidoPaterno" value="<%=cli.getCliApePat()%>" onkeypress="return UtileriasUrbi.capturarSoloTextoConvertirMayusculas(event)" tabindex="1" /></td>
+                                                                        <td class="blackText1" align="left"><input type="text" name="apellidoPaterno" id ="apellidoPaterno" value="<%=cli.getCliApePat()%>"  onkeypress="return UtileriasUrbi.capturarSoloTextoConvertirMayusculas(event)" tabindex="1" /></td>
                                                                         <td class="blackText1" width="10">&nbsp;</td>
                                                                         <td class="blackText1" align="left"><input type="text" name="apellidoMaterno" id="apellidoMaterno" value="<%=cli.getCliApeMat()%>" onkeypress="return UtileriasUrbi.capturarSoloTextoConvertirMayusculas(event)" tabindex="1" /></td>
                                                                         <td class="blackText1" width="10">&nbsp;</td>
@@ -767,9 +787,9 @@
                                                                         <td align="left" class="blackText1"><input name="codigoPostal" id="codigoPostal" type="text" value="<%=cli.getCodPosId()%>" size="6" onkeypress="return UtileriasUrbi.capturarSoloNumerosEnteros(event)"
                                                                                                                    onblur="UtileriasUrbi.cargarCodigoPostal('codigoPostal'); UtileriasUrbi.validarDigitosCodigoPostal('codigoPostal')" maxlength="5" tabindex="10"/></td>
                                                                         <td align="left" class="blackText1">&nbsp;</td>
-                                                                        <td align="left" class="blackText1"><input type="text" name="estado" id="estado" disabled="disabled" tabindex="-4" />                        </td>
+                                                                        <td align="left" class="blackText1"><input type="text" name="estado" id="estado" value="<%=estado%>" disabled="disabled" tabindex="-4" />                        </td>
                                                                         <td align="left" class="blackText1">&nbsp;</td>
-                                                                        <td align="left" class="blackText1"><input type="text" name="delegacionMunicipio" id="delegacion" disabled="disabled" tabindex="-5" />                        </td>
+                                                                        <td align="left" class="blackText1"><input type="text" name="delegacionMunicipio" value="<%=municipio%>" id="delegacion" disabled="disabled" tabindex="-5" />                        </td>
                                                                     </tr>
                                                                     <%} else {%>
                                                                     <tr><td align="left" class="blackText1"><input type="text" name="calle" id="calle" onkeypress="return UtileriasUrbi.capturarSoloTextoConvertirMayusculas(event)"  tabindex="6"/>                        </td>

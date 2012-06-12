@@ -29,6 +29,9 @@ import com.urbi.utils.valueobject.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Map;
 import objetos.Cli;
 import objetos.CliMta2;
 
@@ -582,54 +585,61 @@ public class AgregarMetaServlet extends HttpServlet {
         if (request.getParameter("pantalla").equals("pantalla1")) {
 
             System.out.println("->>>>>> doPost " + request.getParameter("pantalla"));
-
-            this.setApellidoPaterno(request.getParameter("apellidoPaterno"));
-            this.setApellidoMaterno(request.getParameter("apellidoMaterno"));
-            this.setNombre(request.getParameter("Nombre"));
-            this.setAnno(request.getParameter("anio"));
-            this.setMes(request.getParameter("mes"));
-            this.setDia(request.getParameter("dia"));
-            this.setEdad(request.getParameter("edad"));
-            this.setCalle(request.getParameter("calle"));
-            this.setNoExterior(request.getParameter("noExterior"));
-            this.setNoInterior(request.getParameter("noInterior"));
-            this.setColonia(request.getParameter("colonia"));
-            this.setCodigoPostal(request.getParameter("codigoPostal"));
-            this.setEstado(request.getParameter("estado"));
-            this.setDelegacionMunicipio(request.getParameter("delegacionMunicipio"));;
-            this.setReligion(request.getParameter("religion"));
-            this.setSex(request.getParameter("sex"));
-            this.setEstadoCivil(request.getParameter("estadoCivil"));
-            this.setNEstdio(request.getParameter("nEstdio"));
-            this.setTipoRes(request.getParameter("tipoRes"));
-            this.setTiempoVivienda(request.getParameter("tiempoVivienda"));
-            this.setTiempoEmpleo(request.getParameter("tiempoEmpleo"));
-            this.setMov(request.getParameter("mov"));
-            this.setPrestamo(request.getParameter("prestamo"));
-            this.setMejorPartido(request.getParameter("mejorPartido"));
-            this.setRelAfe(request.getParameter("relAfe"));
-            this.setOpinionApoDe(request.getParameter("opinionApoDe"));
-            this.setPartAsoc(request.getParameter("partAsoc"));
-            this.setDependenciaEco(request.getParameter("dependenciaEco"));
-            this.setActividadExt(request.getParameter("actividadExt"));
-            this.setDineroExt(request.getParameter("DineroExt"));
-            this.setGastoImp(request.getParameter("gastoImp"));
-            this.setIngMens(request.getParameter("ingMens"));
-            this.setRdgTC(request.getParameter("rdgTC"));
-            this.setRdgProblemaB(request.getParameter("rdgProblemaB"));
-            this.setRFC(request.getParameter("rfc"));
+            Enumeration<String> parameterNames = request.getParameterNames();
+            Map<String,String> mapeo=new HashMap<String, String>();
+            while(parameterNames.hasMoreElements()){
+                String llave=parameterNames.nextElement();
+                String valor=request.getParameter(llave)==null ? null :request.getParameter(llave).toUpperCase();
+                mapeo.put(llave, valor);
+            }
+            
+            this.setApellidoPaterno(mapeo.get("apellidoPaterno"));
+            this.setApellidoMaterno(mapeo.get("apellidoMaterno"));
+            this.setNombre(mapeo.get("Nombre"));
+            this.setAnno(mapeo.get("anio"));
+            this.setMes(mapeo.get("mes"));
+            this.setDia(mapeo.get("dia"));
+            this.setEdad(mapeo.get("edad"));
+            this.setCalle(mapeo.get("calle"));
+            this.setNoExterior(mapeo.get("noExterior"));
+            this.setNoInterior(mapeo.get("noInterior"));
+            this.setColonia(mapeo.get("colonia"));
+            this.setCodigoPostal(mapeo.get("codigoPostal"));
+            this.setEstado(mapeo.get("estado"));
+            this.setDelegacionMunicipio(mapeo.get("delegacionMunicipio"));;
+            this.setReligion(mapeo.get("religion"));
+            this.setSex(mapeo.get("sex"));
+            this.setEstadoCivil(mapeo.get("estadoCivil"));
+            this.setNEstdio(mapeo.get("nEstdio"));
+            this.setTipoRes(mapeo.get("tipoRes"));
+            this.setTiempoVivienda(mapeo.get("tiempoVivienda"));
+            this.setTiempoEmpleo(mapeo.get("tiempoEmpleo"));
+            this.setMov(mapeo.get("mov"));
+            this.setPrestamo(mapeo.get("prestamo"));
+            this.setMejorPartido(mapeo.get("mejorPartido"));
+            this.setRelAfe(mapeo.get("relAfe"));
+            this.setOpinionApoDe(mapeo.get("opinionApoDe"));
+            this.setPartAsoc(mapeo.get("partAsoc"));
+            this.setDependenciaEco(mapeo.get("dependenciaEco"));
+            this.setActividadExt(mapeo.get("actividadExt"));
+            this.setDineroExt(mapeo.get("DineroExt"));
+            this.setGastoImp(mapeo.get("gastoImp"));
+            this.setIngMens(mapeo.get("ingMens"));
+            this.setRdgTC(mapeo.get("rdgTC"));
+            this.setRdgProblemaB(mapeo.get("rdgProblemaB"));
+            this.setRFC(mapeo.get("rfc"));
 
             //arrRdgTC
-            this.setMesVencido(request.getParameter("mesVencido"));
-            this.setPcuso(request.getParameter("pcuso"));
-            this.setPcPago(request.getParameter("pcPago"));
+            this.setMesVencido(mapeo.get("mesVencido"));
+            this.setPcuso(mapeo.get("pcuso"));
+            this.setPcPago(mapeo.get("pcPago"));
 
             //arrRdgProblemaB
-            this.setBuroAct(request.getParameter("buroAct"));
-            this.setBuroUso(request.getParameter("buroUso"));
-            this.setBuroHist(request.getParameter("buroHist"));
-            this.setBuroPago(request.getParameter("buroPago"));
-            this.setBuroAnt(request.getParameter("buroAnt"));
+            this.setBuroAct(mapeo.get("buroAct"));
+            this.setBuroUso(mapeo.get("buroUso"));
+            this.setBuroHist(mapeo.get("buroHist"));
+            this.setBuroPago(mapeo.get("buroPago"));
+            this.setBuroAnt(mapeo.get("buroAnt"));
 
 
 
@@ -850,9 +860,9 @@ public class AgregarMetaServlet extends HttpServlet {
             System.out.println("cliente de session: " + clienteSession);
 
             //this.setTipoActividad(Integer.parseInt(request.getParameter("tipoActividad")));
-            this.setDesarrollo(Integer.parseInt(request.getParameter("desarrollo")));
-            this.setCliValMen(Integer.parseInt(request.getParameter("valorViviendaMen")));
-            this.setCliValViv(Integer.parseInt(request.getParameter("valorVivienda")));
+            this.setDesarrollo(Integer.parseInt(request.getParameter("desarrollo").toUpperCase()));
+            this.setCliValMen(Integer.parseInt(request.getParameter("valorViviendaMen").toUpperCase()));
+            this.setCliValViv(Integer.parseInt(request.getParameter("valorVivienda").toUpperCase()));
 
             if (request.getParameter("subSector") == null || ((String) request.getParameter("subSector")).trim().equals("-Seleccione-")) {
                 if (request.getParameter("tipoActividad") != null || ((String) request.getParameter("tipoActividad")).trim().equals("-Seleccione-")) {
@@ -864,12 +874,12 @@ public class AgregarMetaServlet extends HttpServlet {
             }
             //this.setSector(Integer.parseInt(request.getParameter("sector")));
 
-            this.setEstado(request.getParameter("estado"));
-            this.setRol(Integer.parseInt(request.getParameter("rol")));
+            this.setEstado(request.getParameter("estado").toUpperCase());
+            this.setRol(Integer.parseInt(request.getParameter("rol").toUpperCase()));
 
             System.out.println(request.getParameter("textfield") + " descripcion ");
 
-            clienteSession.setCliDesOcu(request.getParameter("textfield"));
+            clienteSession.setCliDesOcu(request.getParameter("textfield").toUpperCase());
 
             //String ocp_id = Integer.toString(this.getTipoActividad()) + Integer.toString(this.getSector()) + Integer.toString(this.getSubsector());
 

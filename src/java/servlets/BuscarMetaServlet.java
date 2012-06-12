@@ -7,6 +7,7 @@ package servlets;
 
 import com.urbi.business.impl.CustomerImpl;
 import com.urbi.business.interfaces.Customer;
+import com.urbi.dao.impl.Dao;
 import com.urbi.utils.valueobject.ProcessValueObject;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -168,25 +169,12 @@ public class BuscarMetaServlet extends HttpServlet {
         String clausulaWhere = "";
         List<Cli> cust = new ArrayList<Cli>();
 
-        //se valida cada uno de los filtros
-        //filtro por numero
-        if(request.getParameter("porNumero") != null){
-
-            this.setPorNumero(Integer.parseInt(request.getParameter("porNumero")));
-
-            if (request.getParameter("numero") != null){
-
-                this.setNumero(request.getParameter("numero"));
-            }
-            //si no existe un where previo
-            //ahora se busca por rfc
-            System.out.println("bandera where en numero: " + banderaWhere);
-            if(banderaWhere == 0){
-                clausulaWhere = "where c.cliRFC='" + this.getNumero() + "'";
-            }else{
-                clausulaWhere = clausulaWhere + " and c.cliRFC='" + this.getNumero() + "'";
-            }
+        if(request.getParameter("porPersona")==null){
+            request.getSession().removeAttribute("clientes");
+            response.sendRedirect("./meta/metaindex.jsp");
+            return;
         }
+        
 
         //filtro por persona
         if(request.getParameter("porPersona") != null){
@@ -200,68 +188,13 @@ public class BuscarMetaServlet extends HttpServlet {
             //si no existe un where previo
             System.out.println("Bandeda wher en persona: " + banderaWhere);
             if(banderaWhere == 0){
-                clausulaWhere = "where c.cliNom like '%" + this.getPersona() + "%'";
+                clausulaWhere = "where c.cliNom like '%" + this.getPersona() + 
+                        "%' or c.cliApePat like '%"+this.getPersona()+"%' or c.cliApeMat like '%"+this.getPersona()+"%'";
             }else{
                 clausulaWhere = clausulaWhere + " and c.cliNom like '%" + this.getPersona() + "%'";
             }
         }
 
-      //filtro por usuario
-      /* no se va a ocupar
-        if(request.getParameter("porUsuario") != null){
-
-            this.setPorUsuario(Integer.parseInt(request.getParameter("porUsuario")));
-            if (request.getParameter("porUsuario") != null){
-
-                this.setUsuario(request.getParameter("porUsuario"));
-            }
-            //si no existe un where previo
-            //todo: validar como se relaciona el usuario con el cliente para agregar filtro
-            System.out.println("Bandeda wher en usuario: " + banderaWhere);
-            if(banderaWhere == 0){
-                clausulaWhere = "where c.nombre like%'=" + persona + "'";
-            }else{
-                clausulaWhere = clausulaWhere + " and c.nombre like%'=" + persona + "'";
-            }
-        }*/
-
-        //filtro por fecha
-        if(request.getParameter("porFecha") != null){
-
-            this.setPorFecha(Integer.parseInt(request.getParameter("porFecha")));
-            SimpleDateFormat formater = new SimpleDateFormat("dd/MM/yyyy");
-
-            if (request.getParameter("ano") != null
-                    && request.getParameter("mes") != null){
-
-                try {
-
-                    String cadenaFecha = "01/" +
-                            request.getParameter("mes") + "/" + request.getParameter("ano");
-                    System.out.println("cadenaFecha: " + cadenaFecha);
-                    this.setFecha(formater.parse(cadenaFecha));
-                } catch (ParseException ex) {
-
-                    System.out.print("error al parsear la fecha del filtro: " + ex.getMessage());
-                }
-
-
-            }
-            Calendar cal = Calendar.getInstance();
-            cal.setTime(this.getFecha());
-            cal.add(Calendar.DAY_OF_MONTH, 30);
-            //si no existe un where previo
-            System.out.println("Bandeda wher en fecha: " + banderaWhere);
-            if(banderaWhere == 0){
-                clausulaWhere = "where c.cliFecNac between STR_TO_DATE('"
-                        + formater.format(this.getFecha()) + "', '%d/%m/%Y') and STR_TO_DATE('"
-                        + formater.format(cal.getTime()) + "', '%d/%m/%Y')";
-            }else{
-                clausulaWhere = clausulaWhere + " and c.cliFecNac between STR_TO_DATE('"
-                        + formater.format(this.getFecha()) + "', '%d/%m/%Y') and STR_TO_DATE('"
-                        + formater.format(cal.getTime()) + "', '%d/%m/%Y')";
-            }
-        }
 
 
         System.out.println("cadena where: " + clausulaWhere);

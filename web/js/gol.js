@@ -504,35 +504,8 @@ function salirGol() {
 		location.assign('../GolServlet?command=salir');
 	}
 }
-function buscar() {
-	if (document.getElementById('cRfc').checked == false
-			&& document.getElementById('cPersona').checked == false) {
-		alert("Seleccione un criterio de búsqueda.");
-	} else {
-		var msg = "";
-		var valida = 0;
-		if (document.getElementById('cRfc').checked == true) {
-			if (document.getElementById('rfc').value == "") {
-				valida = 1;
-				msg = msg + "Capture el RFC como criterio de búsqueda." + "\n";
-			}
-		}
-		if (document.getElementById('cPersona').checked == true) {
-			if (document.getElementById('persona').value == "") {
-				valida = 1;
-				msg = msg + "Capture a una Persona como criterio de búsqueda."
-						+ "\n";
-			}
-		}
-		if (valida == 1) {
-			alert(msg);
-			return false;
-		} else {
-			document.getElementById('command').value = "Buscar";
-			document.getElementById('GolIndex').submit();
-		}
-	}
-}
+
+
 function SelGolIndex() {
 	var listaPrim = document.getElementById("listaG");
 	var idSel = listaPrim.options[listaPrim.selectedIndex].value;

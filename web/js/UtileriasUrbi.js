@@ -78,7 +78,7 @@ var UtileriasUrbi = {
 	strIDCP:null,
 	
 	cargarCodigoPostal:function(strIDCP){
-	alert("entro");	
+	
 	UtileriasUrbi.strIDCP = 	strIDCP;
 	
 	//alert(UtileriasUrbi.strIDCP)

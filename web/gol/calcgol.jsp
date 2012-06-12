@@ -54,6 +54,8 @@
 														Double.parseDouble(ASPECTOS_DIF), "Tipos de Documentos");
 		pageContext.setAttribute("categoryDataChar", categoryData);
 	}
+        
+        String lista = (String) request.getSession().getAttribute("listaGol");
 %>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
@@ -127,7 +129,7 @@ function MM_preloadImages() { //v3.0
 			<select name="listaG" id="listaG" multiple="multiple" class="lista_200"
 					onclick="SelGol();"
 					size="20">
-				<%=GolSql.getListaGol("","",0)%>
+				<%=(lista == null) ? GolSql.getListaGol("", "", 0) : lista%>
 			</select>
 			</form>
 			<br>

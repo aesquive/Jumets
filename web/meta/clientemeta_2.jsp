@@ -325,9 +325,11 @@ a:active {
                                 TipEmp emp = (TipEmp) it.next();
                                 if(oldCliMta != null){
                                     System.out.println("si hya cliente se busca el inicial");
-                                    tipEmpId = (BigDecimal) s.createQuery("select tipEmpId from TipEmp as te, Srv as s, Ocp as o where te.calId=6 " +
+                                    TipEmp tmp = (TipEmp) s.createQuery("from TipEmp as te, Srv as s, Ocp as o where te.calId=6 " +
                                         "and s.tipEmpId=te.tipEmpId and o.srvId=s.srvId and o.ocpId=" + oldCliMta.getOcpId()).uniqueResult();
 
+                                    tipEmpId=tmp.getTipEmpId();
+                                    
                                     System.out.println("tipEmp guardado: " + tipEmpId +" tipEmp del ciclo: " + emp.getTipEmpId());
                                     if(tipEmpId != null){
                                         if(emp.getTipEmpId().intValue() == tipEmpId.intValue()){

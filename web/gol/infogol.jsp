@@ -216,7 +216,7 @@ else
 					</tr>
 					<tr>
 						<td class="blackText1" align="left">
-							<select id="anio"
+							<select  id="anio"
 									name="anio" onchange="calcular_edad();"
 									class="combo_60" tabindex="4">
 								<option value="-1">-A&ntilde;o-</option>
@@ -233,15 +233,15 @@ else
 							name="mes" onchange="calcular_edad();"
 							class="combo_80" tabindex="5">
 							<option value="-1">-Mes-</option>
-							<option value="01" <%=("01".equals(goal.getMes())) ? "selected" : ""%>>Enero</option>
-							<option value="02" <%=("02".equals(goal.getMes())) ? "selected" : ""%>>Febrero</option>
-							<option value="03" <%=("03".equals(goal.getMes())) ? "selected" : ""%>>Marzo</option>
-							<option value="04" <%=("04".equals(goal.getMes())) ? "selected" : ""%>>Abril</option>
-							<option value="05" <%=("05".equals(goal.getMes())) ? "selected" : ""%>>Mayo</option>
-							<option value="06" <%=("06".equals(goal.getMes())) ? "selected" : ""%>>Junio</option>
-							<option value="07" <%=("07".equals(goal.getMes())) ? "selected" : ""%>>Julio</option>
-							<option value="08" <%=("08".equals(goal.getMes())) ? "selected" : ""%>>Agosto</option>
-							<option value="09" <%=("09".equals(goal.getMes())) ? "selected" : ""%>>Septiembre</option>
+							<option value="01" <%=("1".equals(goal.getMes())) ? "selected" : ""%>>Enero</option>
+							<option value="02" <%=("2".equals(goal.getMes())) ? "selected" : ""%>>Febrero</option>
+							<option value="03" <%=("3".equals(goal.getMes())) ? "selected" : ""%>>Marzo</option>
+							<option value="04" <%=("4".equals(goal.getMes())) ? "selected" : ""%>>Abril</option>
+							<option value="05" <%=("5".equals(goal.getMes())) ? "selected" : ""%>>Mayo</option>
+							<option value="06" <%=("6".equals(goal.getMes())) ? "selected" : ""%>>Junio</option>
+							<option value="07" <%=("7".equals(goal.getMes())) ? "selected" : ""%>>Julio</option>
+							<option value="08" <%=("8".equals(goal.getMes())) ? "selected" : ""%>>Agosto</option>
+							<option value="09" <%=("9".equals(goal.getMes())) ? "selected" : ""%>>Septiembre</option>
 							<option value="10"
 								<%=("10".equals(goal.getMes())) ? "selected" : ""%>>Octubre</option>
 							<option value="11"
