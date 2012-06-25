@@ -602,3 +602,23 @@ function rentaGto(campo) {
 		return false;
 	}
 }
+
+function cargaDesarrollo(campo, campoMod, tipo, idCal, idSelected) {
+    
+    var id1 = id1 = document.getElementById("ubicacionVivienda").value;
+    var id2 = -1;
+    campoModificar = campoMod;
+    tipoGlobal = tipo;
+    globalSelected = idSelected;
+    var requestUrl;
+    
+    requestUrl = "../PrimaAjax?idCal=" + idCal + "&tipo=" + tipo + "&id1="
+    + id1 + "&id2=" + id2;
+    // Crea el objeto XMLHTTP
+    CreateXmlHttpObj();
+    if (XmlHttpObj) {
+        XmlHttpObj.open("GET", requestUrl, true);
+        XmlHttpObj.onreadystatechange = cargaChangeHandler;
+        XmlHttpObj.send(null);
+    }
+}

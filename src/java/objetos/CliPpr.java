@@ -43,13 +43,6 @@ public class CliPpr  implements java.io.Serializable {
        this.cliPprMes = cliPprMes;
     }
    
-    public int getCliMtaId() {
-        return this.cliMtaId;
-    }
-    
-    public void setCliMtaId(int cliMtaId) {
-        this.cliMtaId = cliMtaId;
-    }
     public Cli getCli() {
         return this.cli;
     }
@@ -119,6 +112,20 @@ public class CliPpr  implements java.io.Serializable {
     
     public void setCliPprMes(String cliPprMes) {
         this.cliPprMes = cliPprMes;
+    }
+
+    /**
+     * @return the cliMtaId
+     */
+    public int getCliMtaId() {
+        return cliMtaId;
+    }
+
+    /**
+     * @param cliMtaId the cliMtaId to set
+     */
+    public void setCliMtaId(int cliMtaId) {
+        this.cliMtaId = cliMtaId;
     }
 
 

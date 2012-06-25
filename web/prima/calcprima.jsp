@@ -24,6 +24,9 @@
 			.getAttribute("PRIMA_PURA_RIESGO");
 	String PRIMA_PURA_RIESO_RECARGADA = (String) request.getSession()
 			.getAttribute("PRIMA_PURA_RIESO_RECARGADA");
+        
+        
+            String lista = (String) request.getSession().getAttribute("lista");
 %>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <!-- InstanceBeginEditable name="doctitle" -->
@@ -88,7 +91,7 @@ function MM_preloadImages() { //v3.0
 			<select name="listaP" id="listaP" multiple="multiple" class="lista_200"
 					onclick="SelPrima();"
 					size="20">
-				<%=PrimaSql.getListaPrima("","",0)%>
+				<%=(lista == null) ? PrimaSql.getListaPrima("", "", 0) : lista%>
 			</select>
 			</form>
 		</td>
